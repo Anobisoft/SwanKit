@@ -1,0 +1,1278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0454FB1CCF81FEA6E0172F3E /* Pods_SwanKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4032DA5C6A6742BD5AA5FEDA /* Pods_SwanKit_macOS.framework */; };
+		1E74844DE4F8C374230F98C2 /* Pods_SwanKit_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A6FE76D0957B35D6B03AB4 /* Pods_SwanKit_tvOS.framework */; };
+		4D969BBEC846BFD94324EA3D /* Pods_SwanKit_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE1BA4169F4540A0B288CBC /* Pods_SwanKit_tvOSTests.framework */; };
+		52971725F408D11D6FCCDAA8 /* Pods_SwanKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D437EFA93E9FA63B659664 /* Pods_SwanKit_iOS.framework */; };
+		57BFE63D5624E7E0969C4E85 /* Pods_SwanKit_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2885C9C21A416157115F6077 /* Pods_SwanKit_iOSTests.framework */; };
+		66C6155A348991F143CB83BE /* Pods_SwanKit_macOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D12FFE71374FE96A0107B1 /* Pods_SwanKit_macOSTests.framework */; };
+		6A3A6CF923DABE8E0039CACC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A6CF823DABE8E0039CACC /* LICENSE */; };
+		6A3A6CFB23DABE980039CACC /* SwanKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6A3A6CFA23DABE980039CACC /* SwanKit.podspec */; };
+		6A4C4A22238E48250056DB74 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A21238E48250056DB74 /* ListTests.swift */; };
+		6A4C4A45238E4C200056DB74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A3C238E4C200056DB74 /* ViewController.swift */; };
+		6A4C4A46238E4C200056DB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4A3D238E4C200056DB74 /* Assets.xcassets */; };
+		6A4C4A47238E4C200056DB74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4A3E238E4C200056DB74 /* LaunchScreen.storyboard */; };
+		6A4C4A48238E4C200056DB74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4A40238E4C200056DB74 /* Main.storyboard */; };
+		6A4C4A49238E4C200056DB74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A42238E4C200056DB74 /* AppDelegate.swift */; };
+		6A4C4A4B238E4C200056DB74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A44238E4C200056DB74 /* SceneDelegate.swift */; };
+		6A4C4A7E238E50E80056DB74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A7D238E50E80056DB74 /* AppDelegate.swift */; };
+		6A4C4A80238E50E80056DB74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A7F238E50E80056DB74 /* ViewController.swift */; };
+		6A4C4A82238E50E90056DB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4A81238E50E90056DB74 /* Assets.xcassets */; };
+		6A4C4A85238E50E90056DB74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4A83238E50E90056DB74 /* Main.storyboard */; };
+		6A4C4AAF238E55720056DB74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4AAE238E55720056DB74 /* AppDelegate.swift */; };
+		6A4C4AB1238E55720056DB74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4AB0238E55720056DB74 /* ViewController.swift */; };
+		6A4C4AB4238E55720056DB74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4AB2238E55720056DB74 /* Main.storyboard */; };
+		6A4C4AB6238E55720056DB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4AB5238E55720056DB74 /* Assets.xcassets */; };
+		6A4C4AB9238E55720056DB74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4AB7238E55720056DB74 /* LaunchScreen.storyboard */; };
+		6A5180F5241A70A00071E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4A40238E4C200056DB74 /* Main.storyboard */; };
+		6A60094023B1D8CC0068175C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6A60093F23B1D8CC0068175C /* README.md */; };
+		6A60094123B203700068175C /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A21238E48250056DB74 /* ListTests.swift */; };
+		6A60094223B203710068175C /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A21238E48250056DB74 /* ListTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A4C4A1E238E48250056DB74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A4C49FF238E48240056DB74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A4C4A06238E48240056DB74;
+			remoteInfo = SwanKit;
+		};
+		6A4C4A8D238E50E90056DB74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A4C49FF238E48240056DB74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A4C4A7A238E50E80056DB74;
+			remoteInfo = SwanKit_macOS;
+		};
+		6A4C4AC0238E55730056DB74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A4C49FF238E48240056DB74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A4C4AAB238E55720056DB74;
+			remoteInfo = SwanKit_tvOS;
+		};
+		6ACEAABC23967CC0000AB559 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A4C49FF238E48240056DB74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A4C4A7A238E50E80056DB74;
+			remoteInfo = SwanKit_macOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		010BB743530BA90027A54351 /* Pods-SwanKit_tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SwanKit_tvOSTests/Pods-SwanKit_tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		17582A2A1FC8DD357C893517 /* Pods-SwanKit_macOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_macOSTests.release.xcconfig"; path = "Target Support Files/Pods-SwanKit_macOSTests/Pods-SwanKit_macOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		22CAB6026191065A7EF43E40 /* Pods-SwanKit_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SwanKit_tvOS/Pods-SwanKit_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2390078F00969ABB35B93233 /* Pods_SwanKit_macOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_macOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26D437EFA93E9FA63B659664 /* Pods_SwanKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2885C9C21A416157115F6077 /* Pods_SwanKit_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4032DA5C6A6742BD5AA5FEDA /* Pods_SwanKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C3A10DB24BE4BCC0447B99 /* Pods-SwanKit_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_iOS.release.xcconfig"; path = "Target Support Files/Pods-SwanKit_iOS/Pods-SwanKit_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		607F7126066BD9D5A7C3B4B7 /* Pods_SwanKit_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A3A6CF823DABE8E0039CACC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6A3A6CFA23DABE980039CACC /* SwanKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = SwanKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6A4C4A07238E48240056DB74 /* SwanKit-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwanKit-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4C4A1D238E48250056DB74 /* SwanKit_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwanKit_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4C4A21238E48250056DB74 /* ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTests.swift; sourceTree = "<group>"; };
+		6A4C4A3C238E4C200056DB74 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A4C4A3D238E4C200056DB74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A4C4A3F238E4C200056DB74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A4C4A41238E4C200056DB74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A4C4A42238E4C200056DB74 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A4C4A43238E4C200056DB74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A4C4A44238E4C200056DB74 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6A4C4A7B238E50E80056DB74 /* SwanKit_macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwanKit_macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4C4A7D238E50E80056DB74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A4C4A7F238E50E80056DB74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A4C4A81238E50E90056DB74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A4C4A84238E50E90056DB74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A4C4A86238E50E90056DB74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A4C4A87238E50E90056DB74 /* SwanKit_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwanKit_macOS.entitlements; sourceTree = "<group>"; };
+		6A4C4A8C238E50E90056DB74 /* SwanKit_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwanKit_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4C4AAC238E55720056DB74 /* SwanKit_tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwanKit_tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4C4AAE238E55720056DB74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A4C4AB0238E55720056DB74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A4C4AB3238E55720056DB74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A4C4AB5238E55720056DB74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A4C4AB8238E55720056DB74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A4C4ABA238E55720056DB74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A4C4ABF238E55730056DB74 /* SwanKit_tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwanKit_tvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A60093F23B1D8CC0068175C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6A60094523B203E50068175C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75DC4FF362C6BF872E990F57 /* Pods-SwanKit_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_tvOS.release.xcconfig"; path = "Target Support Files/Pods-SwanKit_tvOS/Pods-SwanKit_tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		779BFC50077C1EA101CA21E6 /* Pods-SwanKit_macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_macOS.release.xcconfig"; path = "Target Support Files/Pods-SwanKit_macOS/Pods-SwanKit_macOS.release.xcconfig"; sourceTree = "<group>"; };
+		7E0DCFFB982DBE3386573519 /* Pods-SwanKit_macOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_macOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SwanKit_macOSTests/Pods-SwanKit_macOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		80FF34D2E919A0D1EA95850F /* Pods-SwanKit_tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SwanKit_tvOSTests/Pods-SwanKit_tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B92569E75D9081B9FE9085E /* Pods_SwanKit_tvOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_tvOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B65CAD4E7FB4D0D09D94B901 /* Pods-SwanKit_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_iOS.debug.xcconfig"; path = "Target Support Files/Pods-SwanKit_iOS/Pods-SwanKit_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BEE1BA4169F4540A0B288CBC /* Pods_SwanKit_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5CBDB522B8A5B1341A7FE2 /* Pods-SwanKit_macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_macOS.debug.xcconfig"; path = "Target Support Files/Pods-SwanKit_macOS/Pods-SwanKit_macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D28BCFF8A28399AAC981F15E /* Pods-SwanKit_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SwanKit_iOSTests/Pods-SwanKit_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2D12FFE71374FE96A0107B1 /* Pods_SwanKit_macOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_macOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFBAB6B318A657D6F3B65801 /* Pods-SwanKit_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwanKit_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SwanKit_iOSTests/Pods-SwanKit_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		F7A6FE76D0957B35D6B03AB4 /* Pods_SwanKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwanKit_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A4C4A04238E48240056DB74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52971725F408D11D6FCCDAA8 /* Pods_SwanKit_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A1A238E48250056DB74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57BFE63D5624E7E0969C4E85 /* Pods_SwanKit_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A78238E50E80056DB74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0454FB1CCF81FEA6E0172F3E /* Pods_SwanKit_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A89238E50E90056DB74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66C6155A348991F143CB83BE /* Pods_SwanKit_macOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4AA9238E55720056DB74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E74844DE4F8C374230F98C2 /* Pods_SwanKit_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4ABC238E55730056DB74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D969BBEC846BFD94324EA3D /* Pods_SwanKit_tvOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		029EDAB6CFBAF4FADD1274E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26D437EFA93E9FA63B659664 /* Pods_SwanKit_iOS.framework */,
+				2885C9C21A416157115F6077 /* Pods_SwanKit_iOSTests.framework */,
+				4032DA5C6A6742BD5AA5FEDA /* Pods_SwanKit_macOS.framework */,
+				D2D12FFE71374FE96A0107B1 /* Pods_SwanKit_macOSTests.framework */,
+				F7A6FE76D0957B35D6B03AB4 /* Pods_SwanKit_tvOS.framework */,
+				BEE1BA4169F4540A0B288CBC /* Pods_SwanKit_tvOSTests.framework */,
+				607F7126066BD9D5A7C3B4B7 /* Pods_SwanKit_iOSUITests.framework */,
+				2390078F00969ABB35B93233 /* Pods_SwanKit_macOSUITests.framework */,
+				8B92569E75D9081B9FE9085E /* Pods_SwanKit_tvOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		402DB641348FC23F6A9ADD86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B65CAD4E7FB4D0D09D94B901 /* Pods-SwanKit_iOS.debug.xcconfig */,
+				54C3A10DB24BE4BCC0447B99 /* Pods-SwanKit_iOS.release.xcconfig */,
+				D28BCFF8A28399AAC981F15E /* Pods-SwanKit_iOSTests.debug.xcconfig */,
+				DFBAB6B318A657D6F3B65801 /* Pods-SwanKit_iOSTests.release.xcconfig */,
+				CF5CBDB522B8A5B1341A7FE2 /* Pods-SwanKit_macOS.debug.xcconfig */,
+				779BFC50077C1EA101CA21E6 /* Pods-SwanKit_macOS.release.xcconfig */,
+				7E0DCFFB982DBE3386573519 /* Pods-SwanKit_macOSTests.debug.xcconfig */,
+				17582A2A1FC8DD357C893517 /* Pods-SwanKit_macOSTests.release.xcconfig */,
+				22CAB6026191065A7EF43E40 /* Pods-SwanKit_tvOS.debug.xcconfig */,
+				75DC4FF362C6BF872E990F57 /* Pods-SwanKit_tvOS.release.xcconfig */,
+				80FF34D2E919A0D1EA95850F /* Pods-SwanKit_tvOSTests.debug.xcconfig */,
+				010BB743530BA90027A54351 /* Pods-SwanKit_tvOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6A4C49FE238E48240056DB74 = {
+			isa = PBXGroup;
+			children = (
+				6A3A6CF823DABE8E0039CACC /* LICENSE */,
+				6A60093F23B1D8CC0068175C /* README.md */,
+				6A3A6CFA23DABE980039CACC /* SwanKit.podspec */,
+				6A4C4A3B238E4C200056DB74 /* SwanKit_iOS */,
+				6A4C4A7C238E50E80056DB74 /* SwanKit_macOS */,
+				6A4C4AAD238E55720056DB74 /* SwanKit_tvOS */,
+				6A4C4A20238E48250056DB74 /* Tests */,
+				6A4C4A08238E48240056DB74 /* Products */,
+				402DB641348FC23F6A9ADD86 /* Pods */,
+				029EDAB6CFBAF4FADD1274E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6A4C4A08238E48240056DB74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C4A07238E48240056DB74 /* SwanKit-iOS.app */,
+				6A4C4A1D238E48250056DB74 /* SwanKit_iOSTests.xctest */,
+				6A4C4A7B238E50E80056DB74 /* SwanKit_macOS.app */,
+				6A4C4A8C238E50E90056DB74 /* SwanKit_macOSTests.xctest */,
+				6A4C4AAC238E55720056DB74 /* SwanKit_tvOS.app */,
+				6A4C4ABF238E55730056DB74 /* SwanKit_tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A4C4A20238E48250056DB74 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C4A21238E48250056DB74 /* ListTests.swift */,
+				6A60094523B203E50068175C /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		6A4C4A3B238E4C200056DB74 /* SwanKit_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C4A3C238E4C200056DB74 /* ViewController.swift */,
+				6A4C4A3D238E4C200056DB74 /* Assets.xcassets */,
+				6A4C4A3E238E4C200056DB74 /* LaunchScreen.storyboard */,
+				6A4C4A40238E4C200056DB74 /* Main.storyboard */,
+				6A4C4A42238E4C200056DB74 /* AppDelegate.swift */,
+				6A4C4A43238E4C200056DB74 /* Info.plist */,
+				6A4C4A44238E4C200056DB74 /* SceneDelegate.swift */,
+			);
+			path = SwanKit_iOS;
+			sourceTree = "<group>";
+		};
+		6A4C4A7C238E50E80056DB74 /* SwanKit_macOS */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C4A7D238E50E80056DB74 /* AppDelegate.swift */,
+				6A4C4A7F238E50E80056DB74 /* ViewController.swift */,
+				6A4C4A81238E50E90056DB74 /* Assets.xcassets */,
+				6A4C4A83238E50E90056DB74 /* Main.storyboard */,
+				6A4C4A86238E50E90056DB74 /* Info.plist */,
+				6A4C4A87238E50E90056DB74 /* SwanKit_macOS.entitlements */,
+			);
+			path = SwanKit_macOS;
+			sourceTree = "<group>";
+		};
+		6A4C4AAD238E55720056DB74 /* SwanKit_tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C4AAE238E55720056DB74 /* AppDelegate.swift */,
+				6A4C4AB0238E55720056DB74 /* ViewController.swift */,
+				6A4C4AB2238E55720056DB74 /* Main.storyboard */,
+				6A4C4AB5238E55720056DB74 /* Assets.xcassets */,
+				6A4C4AB7238E55720056DB74 /* LaunchScreen.storyboard */,
+				6A4C4ABA238E55720056DB74 /* Info.plist */,
+			);
+			path = SwanKit_tvOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A4C4A06238E48240056DB74 /* SwanKit_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4C4A31238E48250056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_iOS" */;
+			buildPhases = (
+				F197019E21FBF41048A3E1A9 /* [CP] Check Pods Manifest.lock */,
+				6A4C4A03238E48240056DB74 /* Sources */,
+				6A4C4A04238E48240056DB74 /* Frameworks */,
+				6A4C4A05238E48240056DB74 /* Resources */,
+				6ED472BABF6ECD033D335B29 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwanKit_iOS;
+			productName = SwanKit;
+			productReference = 6A4C4A07238E48240056DB74 /* SwanKit-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A4C4A1C238E48250056DB74 /* SwanKit_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4C4A34238E48250056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_iOSTests" */;
+			buildPhases = (
+				1F13D0DD0CE019FF677DE28F /* [CP] Check Pods Manifest.lock */,
+				6A4C4A19238E48250056DB74 /* Sources */,
+				6A4C4A1A238E48250056DB74 /* Frameworks */,
+				6A4C4A1B238E48250056DB74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A4C4A1F238E48250056DB74 /* PBXTargetDependency */,
+				6ACEAABD23967CC0000AB559 /* PBXTargetDependency */,
+			);
+			name = SwanKit_iOSTests;
+			productName = SwanKitTests;
+			productReference = 6A4C4A1D238E48250056DB74 /* SwanKit_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6A4C4A7A238E50E80056DB74 /* SwanKit_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4C4A9E238E50E90056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_macOS" */;
+			buildPhases = (
+				7E39887DE94B7053A0D072A6 /* [CP] Check Pods Manifest.lock */,
+				6A4C4A77238E50E80056DB74 /* Sources */,
+				6A4C4A78238E50E80056DB74 /* Frameworks */,
+				6A4C4A79238E50E80056DB74 /* Resources */,
+				ACDBB672660350812F7EEF4D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwanKit_macOS;
+			productName = SwanKit_macOS;
+			productReference = 6A4C4A7B238E50E80056DB74 /* SwanKit_macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A4C4A8B238E50E90056DB74 /* SwanKit_macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4C4AA1238E50E90056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_macOSTests" */;
+			buildPhases = (
+				AC00EFA1C6E88883CDBCFAF4 /* [CP] Check Pods Manifest.lock */,
+				6A4C4A88238E50E90056DB74 /* Sources */,
+				6A4C4A89238E50E90056DB74 /* Frameworks */,
+				6A4C4A8A238E50E90056DB74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A4C4A8E238E50E90056DB74 /* PBXTargetDependency */,
+			);
+			name = SwanKit_macOSTests;
+			productName = SwanKit_macOSTests;
+			productReference = 6A4C4A8C238E50E90056DB74 /* SwanKit_macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6A4C4AAB238E55720056DB74 /* SwanKit_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4C4AD7238E55730056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_tvOS" */;
+			buildPhases = (
+				E6E31B0913C4352AFBC6B58F /* [CP] Check Pods Manifest.lock */,
+				6A4C4AA8238E55720056DB74 /* Sources */,
+				6A4C4AA9238E55720056DB74 /* Frameworks */,
+				6A4C4AAA238E55720056DB74 /* Resources */,
+				4F0664E57F62F51726B409A9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwanKit_tvOS;
+			productName = SwanKit_tvOS;
+			productReference = 6A4C4AAC238E55720056DB74 /* SwanKit_tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A4C4ABE238E55730056DB74 /* SwanKit_tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A4C4AD8238E55730056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_tvOSTests" */;
+			buildPhases = (
+				338B055581A9FF9CF657E154 /* [CP] Check Pods Manifest.lock */,
+				6A4C4ABB238E55730056DB74 /* Sources */,
+				6A4C4ABC238E55730056DB74 /* Frameworks */,
+				6A4C4ABD238E55730056DB74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A4C4AC1238E55730056DB74 /* PBXTargetDependency */,
+			);
+			name = SwanKit_tvOSTests;
+			productName = SwanKit_tvOSTests;
+			productReference = 6A4C4ABF238E55730056DB74 /* SwanKit_tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A4C49FF238E48240056DB74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Anobisoft;
+				TargetAttributes = {
+					6A4C4A1C238E48250056DB74 = {
+						TestTargetID = 6A4C4A06238E48240056DB74;
+					};
+					6A4C4A8B238E50E90056DB74 = {
+						TestTargetID = 6A4C4A7A238E50E80056DB74;
+					};
+					6A4C4ABE238E55730056DB74 = {
+						TestTargetID = 6A4C4AAB238E55720056DB74;
+					};
+				};
+			};
+			buildConfigurationList = 6A4C4A02238E48240056DB74 /* Build configuration list for PBXProject "SwanKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A4C49FE238E48240056DB74;
+			productRefGroup = 6A4C4A08238E48240056DB74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A4C4A06238E48240056DB74 /* SwanKit_iOS */,
+				6A4C4A1C238E48250056DB74 /* SwanKit_iOSTests */,
+				6A4C4AAB238E55720056DB74 /* SwanKit_tvOS */,
+				6A4C4ABE238E55730056DB74 /* SwanKit_tvOSTests */,
+				6A4C4A7A238E50E80056DB74 /* SwanKit_macOS */,
+				6A4C4A8B238E50E90056DB74 /* SwanKit_macOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A4C4A05238E48240056DB74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4C4A48238E4C200056DB74 /* Main.storyboard in Resources */,
+				6A4C4A46238E4C200056DB74 /* Assets.xcassets in Resources */,
+				6A3A6CFB23DABE980039CACC /* SwanKit.podspec in Resources */,
+				6A60094023B1D8CC0068175C /* README.md in Resources */,
+				6A4C4A47238E4C200056DB74 /* LaunchScreen.storyboard in Resources */,
+				6A3A6CF923DABE8E0039CACC /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A1B238E48250056DB74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A79238E50E80056DB74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4C4A82238E50E90056DB74 /* Assets.xcassets in Resources */,
+				6A4C4A85238E50E90056DB74 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A8A238E50E90056DB74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4AAA238E55720056DB74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4C4AB9238E55720056DB74 /* LaunchScreen.storyboard in Resources */,
+				6A4C4AB6238E55720056DB74 /* Assets.xcassets in Resources */,
+				6A4C4AB4238E55720056DB74 /* Main.storyboard in Resources */,
+				6A5180F5241A70A00071E0CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4ABD238E55730056DB74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F13D0DD0CE019FF677DE28F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwanKit_iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		338B055581A9FF9CF657E154 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwanKit_tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F0664E57F62F51726B409A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwanKit_tvOS/Pods-SwanKit_tvOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwanKit_tvOS/Pods-SwanKit_tvOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwanKit_tvOS/Pods-SwanKit_tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ED472BABF6ECD033D335B29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwanKit_iOS/Pods-SwanKit_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwanKit_iOS/Pods-SwanKit_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwanKit_iOS/Pods-SwanKit_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E39887DE94B7053A0D072A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwanKit_macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC00EFA1C6E88883CDBCFAF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwanKit_macOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACDBB672660350812F7EEF4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwanKit_macOS/Pods-SwanKit_macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwanKit_macOS/Pods-SwanKit_macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwanKit_macOS/Pods-SwanKit_macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6E31B0913C4352AFBC6B58F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwanKit_tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F197019E21FBF41048A3E1A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwanKit_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A4C4A03238E48240056DB74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4C4A49238E4C200056DB74 /* AppDelegate.swift in Sources */,
+				6A4C4A45238E4C200056DB74 /* ViewController.swift in Sources */,
+				6A4C4A4B238E4C200056DB74 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A19238E48250056DB74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4C4A22238E48250056DB74 /* ListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A77238E50E80056DB74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4C4A80238E50E80056DB74 /* ViewController.swift in Sources */,
+				6A4C4A7E238E50E80056DB74 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4A88238E50E90056DB74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A60094223B203710068175C /* ListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4AA8238E55720056DB74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A4C4AB1238E55720056DB74 /* ViewController.swift in Sources */,
+				6A4C4AAF238E55720056DB74 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A4C4ABB238E55730056DB74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A60094123B203700068175C /* ListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A4C4A1F238E48250056DB74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A4C4A06238E48240056DB74 /* SwanKit_iOS */;
+			targetProxy = 6A4C4A1E238E48250056DB74 /* PBXContainerItemProxy */;
+		};
+		6A4C4A8E238E50E90056DB74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A4C4A7A238E50E80056DB74 /* SwanKit_macOS */;
+			targetProxy = 6A4C4A8D238E50E90056DB74 /* PBXContainerItemProxy */;
+		};
+		6A4C4AC1238E55730056DB74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A4C4AAB238E55720056DB74 /* SwanKit_tvOS */;
+			targetProxy = 6A4C4AC0238E55730056DB74 /* PBXContainerItemProxy */;
+		};
+		6ACEAABD23967CC0000AB559 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A4C4A7A238E50E80056DB74 /* SwanKit_macOS */;
+			targetProxy = 6ACEAABC23967CC0000AB559 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6A4C4A3E238E4C200056DB74 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A4C4A3F238E4C200056DB74 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6A4C4A40238E4C200056DB74 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A4C4A41238E4C200056DB74 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6A4C4A83238E50E90056DB74 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A4C4A84238E50E90056DB74 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6A4C4AB2238E55720056DB74 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A4C4AB3238E55720056DB74 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6A4C4AB7238E55720056DB74 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A4C4AB8238E55720056DB74 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A4C4A2F238E48250056DB74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6A4C4A30238E48250056DB74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A4C4A32238E48250056DB74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B65CAD4E7FB4D0D09D94B901 /* Pods-SwanKit_iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/SwanKit_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-iOS";
+				PRODUCT_NAME = "SwanKit-iOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A4C4A33238E48250056DB74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C3A10DB24BE4BCC0447B99 /* Pods-SwanKit_iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/SwanKit_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-iOS";
+				PRODUCT_NAME = "SwanKit-iOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6A4C4A35238E48250056DB74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D28BCFF8A28399AAC981F15E /* Pods-SwanKit_iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anobisoft.SwanKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit-iOS.app/SwanKit-iOS";
+			};
+			name = Debug;
+		};
+		6A4C4A36238E48250056DB74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFBAB6B318A657D6F3B65801 /* Pods-SwanKit_iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anobisoft.SwanKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit-iOS.app/SwanKit-iOS";
+			};
+			name = Release;
+		};
+		6A4C4A9F238E50E90056DB74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF5CBDB522B8A5B1341A7FE2 /* Pods-SwanKit_macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwanKit_macOS/SwanKit_macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SwanKit_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6A4C4AA0238E50E90056DB74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 779BFC50077C1EA101CA21E6 /* Pods-SwanKit_macOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwanKit_macOS/SwanKit_macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SwanKit_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6A4C4AA2238E50E90056DB74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E0DCFFB982DBE3386573519 /* Pods-SwanKit_macOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit_macOS.app/Contents/MacOS/SwanKit_macOS";
+			};
+			name = Debug;
+		};
+		6A4C4AA3238E50E90056DB74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17582A2A1FC8DD357C893517 /* Pods-SwanKit_macOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit_macOS.app/Contents/MacOS/SwanKit_macOS";
+			};
+			name = Release;
+		};
+		6A4C4AD1238E55730056DB74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22CAB6026191065A7EF43E40 /* Pods-SwanKit_tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SwanKit_tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		6A4C4AD2238E55730056DB74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75DC4FF362C6BF872E990F57 /* Pods-SwanKit_tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SwanKit_tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		6A4C4AD3238E55730056DB74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80FF34D2E919A0D1EA95850F /* Pods-SwanKit_tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit_tvOS.app/SwanKit_tvOS";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		6A4C4AD4238E55730056DB74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 010BB743530BA90027A54351 /* Pods-SwanKit_tvOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anobisoft.SwanKit-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit_tvOS.app/SwanKit_tvOS";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A4C4A02238E48240056DB74 /* Build configuration list for PBXProject "SwanKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4C4A2F238E48250056DB74 /* Debug */,
+				6A4C4A30238E48250056DB74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A4C4A31238E48250056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4C4A32238E48250056DB74 /* Debug */,
+				6A4C4A33238E48250056DB74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A4C4A34238E48250056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4C4A35238E48250056DB74 /* Debug */,
+				6A4C4A36238E48250056DB74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A4C4A9E238E50E90056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4C4A9F238E50E90056DB74 /* Debug */,
+				6A4C4AA0238E50E90056DB74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A4C4AA1238E50E90056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4C4AA2238E50E90056DB74 /* Debug */,
+				6A4C4AA3238E50E90056DB74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A4C4AD7238E55730056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4C4AD1238E55730056DB74 /* Debug */,
+				6A4C4AD2238E55730056DB74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A4C4AD8238E55730056DB74 /* Build configuration list for PBXNativeTarget "SwanKit_tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A4C4AD3238E55730056DB74 /* Debug */,
+				6A4C4AD4238E55730056DB74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A4C49FF238E48240056DB74 /* Project object */;
+}
