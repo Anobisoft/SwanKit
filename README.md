@@ -1,4 +1,4 @@
-![Logo](redSwan256.png)
+![Logo](SwanLogo.png)
 
 # SwanKit
 
