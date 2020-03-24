@@ -1,4 +1,5 @@
 ![Logo](SwanLogo.png)
+
 [![Version](https://img.shields.io/cocoapods/v/SwanKit.svg?style=flat)](http://cocoapods.org/pods/SwanKit)
 [![Platform](https://img.shields.io/cocoapods/p/SwanKit.svg?style=flat)](http://cocoapods.org/pods/SwanKit)
 [![Language](https://img.shields.io/github/languages/top/Anobisoft/SwanKit.svg)](https://github.com/Anobisoft/SwanKit)
