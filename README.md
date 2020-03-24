@@ -1,3 +1,5 @@
+![Logo](redSwan.pdf)
+
 # SwanKit
 
 [![Version](https://img.shields.io/cocoapods/v/SwanKit.svg?style=flat)](http://cocoapods.org/pods/SwanKit)
