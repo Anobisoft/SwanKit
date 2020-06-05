@@ -45,9 +45,9 @@ public struct Version {
         }
     }
 
-    public static let applicationVersion = Self(string: Bundle.appVersion, build: Bundle.appBuild)
+    public static let application = Self(string: Bundle.appVersion, build: Bundle.appBuild)
 
-    public func string(format: String = "%MJ[.MN][.P][.B]") -> String {
+    public func string(format: String = "%MJ[.MN][.P][ build B]") -> String {
         var result = format
         result = result.replacingOccurrences(of: "%MJ", with: major)
 
