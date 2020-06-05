@@ -994,7 +994,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit-iOS.app/SwanKit-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit-Example-iOS.app/SwanKit-Example-iOS";
 			};
 			name = Debug;
 		};
@@ -1014,7 +1014,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit-iOS.app/SwanKit-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit-Example-iOS.app/SwanKit-Example-iOS";
 			};
 			name = Release;
 		};
@@ -1184,7 +1184,7 @@
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit_tvOS.app/SwanKit_tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit-Example-tvOS.app/SwanKit-Example-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 13.2;
 			};
 			name = Debug;
@@ -1209,7 +1209,7 @@
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit_tvOS.app/SwanKit_tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwanKit-Example-tvOS.app/SwanKit-Example-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 13.2;
 			};
 			name = Release;
