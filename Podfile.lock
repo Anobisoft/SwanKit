@@ -1,24 +1,24 @@
 PODS:
-  - SwanKit (0.0.1):
-    - SwanKit/AccessProvider (= 0.0.1)
-    - SwanKit/Appearance (= 0.0.1)
-    - SwanKit/Foundation (= 0.0.1)
-    - SwanKit/ImagePicker (= 0.0.1)
-    - SwanKit/List (= 0.0.1)
-    - SwanKit/SpeechRecognizer (= 0.0.1)
-    - SwanKit/UIFoundation (= 0.0.1)
-  - SwanKit/AccessProvider (0.0.1)
-  - SwanKit/Appearance (0.0.1):
+  - SwanKit (0.0.2):
+    - SwanKit/AccessProvider (= 0.0.2)
+    - SwanKit/Appearance (= 0.0.2)
+    - SwanKit/Foundation (= 0.0.2)
+    - SwanKit/ImagePicker (= 0.0.2)
+    - SwanKit/List (= 0.0.2)
+    - SwanKit/SpeechRecognizer (= 0.0.2)
+    - SwanKit/UIFoundation (= 0.0.2)
+  - SwanKit/AccessProvider (0.0.2)
+  - SwanKit/Appearance (0.0.2):
     - SwanKit/Foundation
-  - SwanKit/Foundation (0.0.1)
-  - SwanKit/ImagePicker (0.0.1):
+  - SwanKit/Foundation (0.0.2)
+  - SwanKit/ImagePicker (0.0.2):
     - SwanKit/AccessProvider
     - SwanKit/Foundation
     - SwanKit/UIFoundation
-  - SwanKit/List (0.0.1)
-  - SwanKit/SpeechRecognizer (0.0.1):
+  - SwanKit/List (0.0.2)
+  - SwanKit/SpeechRecognizer (0.0.2):
     - SwanKit/AccessProvider
-  - SwanKit/UIFoundation (0.0.1):
+  - SwanKit/UIFoundation (0.0.2):
     - SwanKit/Foundation
 
 DEPENDENCIES:
@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  SwanKit: 3d3646b07a2ff069ed5661051aca86a8887bd636
+  SwanKit: 27936c66018e2d106272c1446275fa14537fa50a
 
 PODFILE CHECKSUM: d02e158014c97743274215831abb743484a6cfb3
 

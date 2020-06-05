@@ -31,7 +31,6 @@
 		6A4C4AB4238E55720056DB74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4AB2238E55720056DB74 /* Main.storyboard */; };
 		6A4C4AB6238E55720056DB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4AB5238E55720056DB74 /* Assets.xcassets */; };
 		6A4C4AB9238E55720056DB74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4AB7238E55720056DB74 /* LaunchScreen.storyboard */; };
-		6A5180F5241A70A00071E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C4A40238E4C200056DB74 /* Main.storyboard */; };
 		6A60094023B1D8CC0068175C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6A60093F23B1D8CC0068175C /* README.md */; };
 		6A60094123B203700068175C /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A21238E48250056DB74 /* ListTests.swift */; };
 		6A60094223B203710068175C /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C4A21238E48250056DB74 /* ListTests.swift */; };
@@ -493,7 +492,6 @@
 				6A4C4AB9238E55720056DB74 /* LaunchScreen.storyboard in Resources */,
 				6A4C4AB6238E55720056DB74 /* Assets.xcassets in Resources */,
 				6A4C4AB4238E55720056DB74 /* Main.storyboard in Resources */,
-				6A5180F5241A70A00071E0CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
