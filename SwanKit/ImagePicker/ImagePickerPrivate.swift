@@ -10,9 +10,9 @@ import UIKit
 
 extension ImagePicker {
     
-    func show(on viewController: UIViewController, completion: @escaping Completion) {
+    func show(on viewController: UIViewController, handler: @escaping Handler) {
 
-        delegate = Delegate(retainer: self, completion: completion) // retain
+        delegate = Delegate(retainer: self, handler: handler) // retain
         presenter = viewController
         
         if availableSources.count == 1 && (additionalAlertActions == nil || additionalAlertActions!.count == 0) {
@@ -37,13 +37,13 @@ extension ImagePicker {
         }
 
         for source in availableSources {
-            let action = UIAlertAction(title: Self.sourceTypesLocalizationMap[source], style: .default) { [unowned self] _ in
+            let action = UIAlertAction(title: sourceTypesLocalizationMap[source], style: .default) { [unowned self] _ in
                 self.selectSource(sourceType: source)
             }
             alert.addAction(action)
         }
 
-        let cancel = UIAlertAction(title: Self.cancelButtonTitle ?? "Cancel".localized(.UIKit), style: .cancel) { [unowned self] _ in
+        let cancel = UIAlertAction(title: cancelButtonTitle, style: .cancel) { [unowned self] _ in
             self.delegate = nil //release
         }
         alert.addAction(cancel)
@@ -79,7 +79,7 @@ extension ImagePicker {
         }
     }
     
-    func accessSuccess(sourceType: UIImagePickerController.SourceType) {
+    private func accessSuccess(sourceType: UIImagePickerController.SourceType) {
         guard let presenter = presenter else { return }
         
         let controller = UIImagePickerController()

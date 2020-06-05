@@ -9,8 +9,8 @@
 import UIKit
 
 public extension UIViewController {
-    func show(_ imagePicker: ImagePicker, completion: @escaping ImagePicker.Completion) {
-        imagePicker.show(on: self, completion: completion)
+    func show(_ imagePicker: ImagePicker, handler: @escaping ImagePicker.Handler) {
+        imagePicker.show(on: self, handler: handler)
     }
 }
 
@@ -31,7 +31,7 @@ public class ImagePicker {
     public var cameraDevice: UIImagePickerController.CameraDevice = .rear
     public var cameraFlashMode: UIImagePickerController.CameraFlashMode = .auto
     
-    public typealias Completion = (_ image: UIImage?) -> Void
+    public typealias Handler = (_ image: UIImage?) -> Void
     
     public convenience init?(_ sourceOptions: SourceOptions = .standard) {
         self.init(sourceOptions: sourceOptions)
@@ -52,10 +52,11 @@ public class ImagePicker {
         }
     }
     
-    internal var delegate: Delegate?
-    internal var availableSources = [UIImagePickerController.SourceType]()
-    internal weak var presenter: UIViewController?
-    
+    var delegate: Delegate?
+    var availableSources = [UIImagePickerController.SourceType]()
+    weak var presenter: UIViewController?
+    var _cancelButtonTitle: String?
+    var _sourceTypesLocalizationMap: [UIImagePickerController.SourceType: String] = [:]
 }
 
 extension ImagePicker.AlertAction {

@@ -11,17 +11,16 @@ import SwanKit
 
 class ViewController: UIViewController {
 
-    let picker = ImagePicker()!
+    let picker = ImagePicker()
     let imageView = UIImageView.autolayout()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        picker.additionalAlertActions = [ .init(title: "123") { _ in } ]
-        ImagePicker.sourceTypesLocalizationMap = [
-            .camera: "Camera".localized(.UIKit),
-            .photoLibrary: "Photo Library".localized(.UIKit),
-            .savedPhotosAlbum: "Saved Photos Album".localized(.UIKit),
+        picker?.additionalAlertActions = [ .init(title: "123") { _ in } ]
+        picker?.sourceTypesLocalizationMap = [
+            .camera: "Camera".localized(),
+            .photoLibrary: "Photo Library".localized()
         ]
 
         view.addSubview(imageView)
@@ -39,7 +38,8 @@ class ViewController: UIViewController {
 
         let alert = UIAlertController(title: "OMG!!!", message: "ATATAT!", preferredStyle: .alert)
         alert.addCancel() { [unowned self] _ in
-            self.show(self.picker, completion: self.imagePicked)
+            guard let picker = self.picker else { return }
+            self.show(picker, handler: self.imagePicked)
         }
         self.present(alert, animated: true)
     }

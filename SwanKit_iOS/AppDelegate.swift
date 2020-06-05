@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        print(Bundle.appName, Version.application.string())
+        
         let viewController = UIViewController()
         viewController.view.backgroundColor = .red
         application.rootViewController = viewController

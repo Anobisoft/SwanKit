@@ -26,15 +26,15 @@ public extension ImagePicker {
     }
 }
 
-//MARK: - Private
+//MARK: - Internal
 
-internal extension UIImagePickerController.SourceType {
+extension UIImagePickerController.SourceType {
     var isAvailable: Bool {
         UIImagePickerController.isSourceTypeAvailable(self)
     }
 }
 
-internal extension ImagePicker.SourceOptions {
+extension ImagePicker.SourceOptions {
     func includes(_ sourceType: UIImagePickerController.SourceType) -> Bool {
         contains(Self(rawValue: 1 << sourceType.rawValue))
     }

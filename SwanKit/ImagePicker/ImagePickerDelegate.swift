@@ -8,16 +8,16 @@
 
 import UIKit
 
-internal extension ImagePicker {
+extension ImagePicker {
     
     class Delegate: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
-        var completion: Completion?
+        var handler: Handler?
         var retainer: Any?
         
-        init(retainer: Any, completion: @escaping Completion) {
+        init(retainer: Any, handler: @escaping Handler) {
             self.retainer = retainer // make retain cycle
-            self.completion = completion
+            self.handler = handler
             super.init()
         }
         
@@ -32,8 +32,8 @@ internal extension ImagePicker {
         }
         
         func dismiss(picker: UIImagePickerController, image: UIImage? = nil) {
-            completion?(image)
-            completion = nil
+            handler?(image)
+            handler = nil
             retainer = nil // release
             picker.dismiss(animated: true)
         }

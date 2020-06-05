@@ -10,22 +10,25 @@ import Foundation
 
 public extension ImagePicker {
     
-    static var sourceTypesLocalizationMap: [UIImagePickerController.SourceType: String] {
+    var cancelButtonTitle: String {
+        get { _cancelButtonTitle ?? Self.cancelButtonTitle }
+        set { _cancelButtonTitle = newValue }
+    }
+    
+    var sourceTypesLocalizationMap: [UIImagePickerController.SourceType: String] {
         get {
-            _sourceTypesLocalizationMap
+            Self.sourceTypesLocalizationMap.merging(_sourceTypesLocalizationMap) { (_, new) in new }
         }
         set {
-            if newValue.count == _sourceTypesLocalizationMap.count {
-                _sourceTypesLocalizationMap = newValue
-            }
+            _sourceTypesLocalizationMap.merge(newValue) { (_, new) in new }
         }
     }
-
-    static var cancelButtonTitle: String?
-
-    private static var _sourceTypesLocalizationMap: [UIImagePickerController.SourceType: String] = [
+    
+    private static let sourceTypesLocalizationMap: [UIImagePickerController.SourceType: String] = [
         .camera: "Camera".localized(.UIKit),
         .photoLibrary: "Photo Library".localized(.UIKit),
         .savedPhotosAlbum: "Saved Photos Album".localized(.UIKit),
     ]
+    
+    private static let cancelButtonTitle = "Cancel".localized(.UIKit)
 }
