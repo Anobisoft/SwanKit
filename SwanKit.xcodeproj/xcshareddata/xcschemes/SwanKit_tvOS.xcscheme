@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A4C4AAB238E55720056DB74"
-               BuildableName = "SwanKit_tvOS.app"
+               BuildableName = "SwanKit-Example-tvOS.app"
                BlueprintName = "SwanKit_tvOS"
                ReferencedContainer = "container:SwanKit.xcodeproj">
             </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A4C4AAB238E55720056DB74"
-            BuildableName = "SwanKit_tvOS.app"
+            BuildableName = "SwanKit-Example-tvOS.app"
             BlueprintName = "SwanKit_tvOS"
             ReferencedContainer = "container:SwanKit.xcodeproj">
          </BuildableReference>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A4C4AAB238E55720056DB74"
-            BuildableName = "SwanKit_tvOS.app"
+            BuildableName = "SwanKit-Example-tvOS.app"
             BlueprintName = "SwanKit_tvOS"
             ReferencedContainer = "container:SwanKit.xcodeproj">
          </BuildableReference>

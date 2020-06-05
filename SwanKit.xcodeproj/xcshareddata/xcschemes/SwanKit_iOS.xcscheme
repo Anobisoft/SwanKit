@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A4C4A06238E48240056DB74"
-               BuildableName = "SwanKit-iOS.app"
+               BuildableName = "SwanKit-Example-iOS.app"
                BlueprintName = "SwanKit_iOS"
                ReferencedContainer = "container:SwanKit.xcodeproj">
             </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A4C4A06238E48240056DB74"
-            BuildableName = "SwanKit-iOS.app"
+            BuildableName = "SwanKit-Example-iOS.app"
             BlueprintName = "SwanKit_iOS"
             ReferencedContainer = "container:SwanKit.xcodeproj">
          </BuildableReference>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A4C4A06238E48240056DB74"
-            BuildableName = "SwanKit-iOS.app"
+            BuildableName = "SwanKit-Example-iOS.app"
             BlueprintName = "SwanKit_iOS"
             ReferencedContainer = "container:SwanKit.xcodeproj">
          </BuildableReference>
