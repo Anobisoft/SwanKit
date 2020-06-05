@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
     s.name             = 'SwanKit'
-    s.version          = '0.0.1'
+    s.version          = '0.0.2'
     s.summary          = 'SwanKit - collection of tools and extesions.'
 
     s.description      = <<-DESC
