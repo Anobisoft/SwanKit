@@ -8,7 +8,7 @@ cache: cocoapods
 podfile: Podfile
 
 before_install:
-- gem update cocoapods
+- bundle install
 - pod install
 
 script:
@@ -17,4 +17,4 @@ script:
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-
+- pod trunk push
