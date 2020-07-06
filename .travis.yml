@@ -7,9 +7,9 @@ language: swift
 cache: cocoapods
 podfile: Podfile
 
-before_install:
-- bundle install
-- pod install
+# before_install:
+# - bundle install
+# - pod install
 
 script:
 - pod lib lint
