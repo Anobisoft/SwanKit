@@ -10,19 +10,19 @@ import Foundation
 
 public extension String {
     
-    func localized(_ bundle: Bundle = .main) -> String {
-        bundle.localize(self)
+    func localized(_ bundle: Bundle = .main, value: String? = nil, table: String? = nil) -> String {
+        bundle.localized(self, value: value, table: table)
     }
     
     var localized: String {
-        return localized()
+        localized()
     }
 }
 
 extension Bundle {
     
-    func localize(_ key: String, table: String? = nil) -> String {
-        self.localizedString(forKey: key, value: nil, table: nil)
+    func localized(_ key: String, value: String? = nil, table: String? = nil) -> String {
+        localizedString(forKey: key, value: value, table: table)
     }
 }
 
