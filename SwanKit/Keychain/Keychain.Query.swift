@@ -26,15 +26,24 @@ extension Keychain.QueryData {
     
     subscript(key: CFString) -> AnyObject? {
         get { self[key as String] }
-        set { self[key as String] = newValue }
+        set {
+            guard newValue != nil else { return }
+            self[key as String] = newValue
+        }
     }
     subscript(key: CFString) -> String? {
         get { self[key as String] as? String }
-        set { self[key as String] = newValue as AnyObject }
+        set {
+            guard newValue != nil else { return }
+            self[key as String] = newValue as AnyObject
+        }
     }
     subscript(key: CFString) -> Data? {
         get { self[key as String] as? Data }
-        set { self[key as String] = newValue as AnyObject }
+        set {
+            guard newValue != nil else { return }
+            self[key as String] = newValue as AnyObject
+        }
     }
     subscript(key: CFString) -> Bool {
         get { CFBooleanCast(self[key as String]) }

@@ -27,27 +27,15 @@ extension Keychain.Service {
     }
     
     func fetchData<T>(includingData: Bool, map: (Keychain.QueryData) throws -> T) throws -> [T] {
-        // Build a query for all items that match the service and access group.
         var query = makeQuery()
         query[kSecMatchLimit] = kSecMatchLimitAll
         query[kSecReturnAttributes] = true
         query[kSecReturnData] = includingData
-        
-        // Fetch matching items from the keychain.
         var queryResult: AnyObject?
-        let status = withUnsafeMutablePointer(to: &queryResult) {
-            SecItemCopyMatching(query.CF, UnsafeMutablePointer($0))
-        }
-        
-        // If no items were found, return an empty array.
+        let status = SecItemCopyMatching(query.CF, &queryResult)
         guard status != errSecItemNotFound else { return [] }
-
-        // Throw an error if an unexpected status was returned.
         guard status == noErr else { throw status }
-        
-        // Cast the query result to an array of dictionaries.
         guard let result = queryResult as? [Keychain.QueryData] else { throw Keychain.Error.genericPasswordParsingError }
-
         return try result.map(map)
     }
     
@@ -56,23 +44,16 @@ extension Keychain.Service {
         query[kSecMatchLimit] = kSecMatchLimitOne
         query[kSecReturnAttributes] = false
         query[kSecReturnData] = true
-        // Try to fetch the existing keychain item that matches the query.
-        var queryResult: AnyObject?
-        let status = withUnsafeMutablePointer(to: &queryResult) {
-            SecItemCopyMatching(query.CF, UnsafeMutablePointer($0))
-        }
-        // Check the return status and throw an error if appropriate.
+        var queryResult: CFTypeRef?
+        let status = SecItemCopyMatching(query.CF, &queryResult)
         guard status != errSecItemNotFound else { return nil }
         guard status == noErr else { throw status }
-        
-        // Parse the password string from the query result.
         guard let result = queryResult as? Keychain.QueryData,
             let valueData: Data = result[kSecValueData],
             let password = String(data: valueData, encoding: .utf8)
         else {
             throw Keychain.Error.genericPasswordParsingError
         }
-        
         return password
     }
     
