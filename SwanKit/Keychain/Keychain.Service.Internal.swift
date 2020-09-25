@@ -48,8 +48,7 @@ extension Keychain.Service {
         let status = SecItemCopyMatching(query.CF, &queryResult)
         guard status != errSecItemNotFound else { return nil }
         guard status == noErr else { throw status }
-        guard let result = queryResult as? Keychain.QueryData,
-            let valueData: Data = result[kSecValueData],
+        guard let valueData = queryResult as? Data,
             let password = String(data: valueData, encoding: .utf8)
         else {
             throw Keychain.Error.genericPasswordParsingError

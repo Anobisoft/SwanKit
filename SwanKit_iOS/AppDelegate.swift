@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let service = Keychain.Service(id: "SwanKit")
         try? service.save(account: "OMG!", password: "ATATAT!")
         print(try? service.fetchPasswords())
+        print(try? service.fetchPassword(account: "OMG!"))
         
         let viewController = UIViewController()
         viewController.view.backgroundColor = .red
