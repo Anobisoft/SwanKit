@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/cocoapods/l/SwanKit.svg?style=flat)](http://cocoapods.org/pods/SwanKit)
 [![Twitter](https://img.shields.io/badge/twitter-@Anobisoft-blue.svg?style=flat)](http://twitter.com/Anobisoft)
 
-Collection of tools and extesions.
+Collection of tools and extensions.
 
 ## CocoaPods integration
 To integrate **SwanKit** into your Xcode project using [CocoaPods](http://cocoapods.org), specify it in your `Podfile`:
