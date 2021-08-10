@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol CacheDelegate: class {
+public protocol CacheDelegate: AnyObject {
     func cache<KeyType: AnyObject, ObjectType: AnyObject>(_ cache: Cache<KeyType, ObjectType>, willEvict object: ObjectType)
 }
 

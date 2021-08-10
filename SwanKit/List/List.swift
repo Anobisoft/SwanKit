@@ -1,12 +1,12 @@
 //
-//  List.swift 74416651
+//  List.swift
 //  SwanKit
 //
 //  Created by Stanislav Pletnev on 2018-10-14
 //  Copyright © 2018 Anobisoft. All rights reserved.
 //
 
-public protocol ListElement: class {
+public protocol ListElement: AnyObject {
     associatedtype T
     var object: T? { get }
     var next: Self? { get set }
