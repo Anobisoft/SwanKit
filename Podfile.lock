@@ -1,26 +1,26 @@
 PODS:
-  - SwanKit (0.0.4):
-    - SwanKit/AccessProvider (= 0.0.4)
-    - SwanKit/Appearance (= 0.0.4)
-    - SwanKit/Foundation (= 0.0.4)
-    - SwanKit/ImagePicker (= 0.0.4)
-    - SwanKit/Keychain (= 0.0.4)
-    - SwanKit/List (= 0.0.4)
-    - SwanKit/SpeechRecognizer (= 0.0.4)
-    - SwanKit/UIFoundation (= 0.0.4)
-  - SwanKit/AccessProvider (0.0.4)
-  - SwanKit/Appearance (0.0.4):
+  - SwanKit (0.0.6):
+    - SwanKit/AccessProvider (= 0.0.6)
+    - SwanKit/Appearance (= 0.0.6)
+    - SwanKit/Foundation (= 0.0.6)
+    - SwanKit/ImagePicker (= 0.0.6)
+    - SwanKit/Keychain (= 0.0.6)
+    - SwanKit/List (= 0.0.6)
+    - SwanKit/SpeechRecognizer (= 0.0.6)
+    - SwanKit/UIFoundation (= 0.0.6)
+  - SwanKit/AccessProvider (0.0.6)
+  - SwanKit/Appearance (0.0.6):
     - SwanKit/Foundation
-  - SwanKit/Foundation (0.0.4)
-  - SwanKit/ImagePicker (0.0.4):
+  - SwanKit/Foundation (0.0.6)
+  - SwanKit/ImagePicker (0.0.6):
     - SwanKit/AccessProvider
     - SwanKit/Foundation
     - SwanKit/UIFoundation
-  - SwanKit/Keychain (0.0.4)
-  - SwanKit/List (0.0.4)
-  - SwanKit/SpeechRecognizer (0.0.4):
+  - SwanKit/Keychain (0.0.6)
+  - SwanKit/List (0.0.6)
+  - SwanKit/SpeechRecognizer (0.0.6):
     - SwanKit/AccessProvider
-  - SwanKit/UIFoundation (0.0.4):
+  - SwanKit/UIFoundation (0.0.6):
     - SwanKit/Foundation
 
 DEPENDENCIES:
@@ -31,8 +31,8 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  SwanKit: 184231a1ff4c901a0e72c67c9d5320e65c5cf221
+  SwanKit: dbb75f91677e681a8a6e2bcbc7f7286054c69c8f
 
 PODFILE CHECKSUM: d02e158014c97743274215831abb743484a6cfb3
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

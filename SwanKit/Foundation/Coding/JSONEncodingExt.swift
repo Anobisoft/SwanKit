@@ -70,7 +70,7 @@ public extension JSONEncoder.KeyEncodingStrategy {
 
 public struct ScreamingSnakeKey: CodingKey {
     public init?(stringValue: String) {
-        self.stringValue = stringValue.lamaCaseTo_SCREAMING_SNAKE
+        self.stringValue = stringValue.camelCaseTo_SCREAMING_SNAKE
     }
 
     public init?(intValue: Int) {

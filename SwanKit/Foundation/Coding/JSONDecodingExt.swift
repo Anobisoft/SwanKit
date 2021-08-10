@@ -65,12 +65,12 @@ public extension JSONDecoder.KeyDecodingStrategy {
         }
     }
 
-    static let convertFromSnakeCaseExtended = customizable(LamaKey.self)
+    static let convertFromSnakeCaseExtended = customizable(CamelKey.self)
 }
 
-public struct LamaKey: CodingKey {
+public struct CamelKey: CodingKey {
     public init?(stringValue: String) {
-        self.stringValue = stringValue.snake_case_to_lamaCase
+        self.stringValue = stringValue.camelCasedSnake
     }
     
     public init?(intValue: Int) {
