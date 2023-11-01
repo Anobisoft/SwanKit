@@ -21,17 +21,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let service = Keychain.Service(id: "SwanKit")
         try? service.save(account: "OMG!", password: "ATATAT!")
-        print(try? service.fetchPasswords())
-        print(try? service.fetchPassword(account: "OMG!"))
-        
+        do {
+            let passwords = try service.fetchPasswords()
+            print("Keychain Service 'SwanKit' passwords: \n\(passwords)")
+            let omg = try service.fetchPassword(account: "OMG!")
+            print("Keychain Service 'SwanKit' password for account 'OMG!': \(omg ?? "nil")")
+        } catch {
+            print(error)
+        }
+
         let viewController = UIViewController()
-        viewController.view.backgroundColor = .red
+        viewController.view.backgroundColor = .yellow
         application.rootViewController = viewController
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+        let alert = UIAlertController(title: "Show next", message: nil, preferredStyle: .alert)
+        alert.addAction(title: "next", style: .default) { _ in
             let viewController = ViewController()
             viewController.view.backgroundColor = .blue
             application.rootViewController = viewController
+        }
+        
+        alert.addCancel() { _ in 
+            viewController.view.backgroundColor = .red
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            viewController.present(alert, animated: true)
         }
 
         return true

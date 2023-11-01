@@ -36,12 +36,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let alert = UIAlertController(title: "OMG!!!", message: "ATATAT!", preferredStyle: .alert)
-        alert.addCancel() { [unowned self] _ in
-            guard let picker = self.picker else { return }
-            self.show(picker, handler: self.imagePicked)
-        }
-        self.present(alert, animated: true)
+        guard let picker = self.picker else { return }
+        self.show(picker, handler: self.imagePicked)
     }
 
     func imagePicked(_ image: UIImage?) {

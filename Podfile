@@ -6,7 +6,7 @@ def shared_pods
 end
 
 target 'SwanKit_iOS' do
-  platform :ios, '10.0'
+  platform :ios, '12.0'
   shared_pods
   
   target 'SwanKit_iOSTests' do
@@ -15,7 +15,7 @@ target 'SwanKit_iOS' do
 end
 
 target 'SwanKit_tvOS' do
-  platform :tvos, '10.0'
+  platform :tvos, '12.0'
   shared_pods
   
   target 'SwanKit_tvOSTests' do

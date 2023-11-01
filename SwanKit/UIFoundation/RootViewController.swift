@@ -23,10 +23,17 @@ public extension UIApplication {
 
 final class RootViewController: UIViewController {
     
-    public var animationOptions: UIView.AnimationOptions = .transitionFlipFromTop
+    public struct Config {
+        public var animationOptions: UIView.AnimationOptions
+        public var animationDuration: CGFloat
+        
+        static let `default` = Config(animationOptions: .transitionFlipFromTop, animationDuration: 0.3)
+    }
     
-    public init(_ animationOptions: UIView.AnimationOptions) {
-        self.animationOptions = animationOptions
+    var config: Config = .default
+    
+    public init(_ config: Config) {
+        self.config = config
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,9 +51,7 @@ final class RootViewController: UIViewController {
         }
     }
     
-    static var instance = RootViewController(.transitionFlipFromTop)
-
-
+    static var instance = RootViewController(.default)
     
     public static var shared: RootViewController {
         return makeRoot()
@@ -86,7 +91,11 @@ final class RootViewController: UIViewController {
                 return
             }
             if embedded != newValue {
-                UIView.transition(from: embedded.view, to: newValue.view, duration: 0.3, options: [ animationOptions ], completion: nil)
+                UIView.transition(from: embedded.view, 
+                                  to: newValue.view,
+                                  duration: config.animationDuration,
+                                  options: config.animationOptions,
+                                  completion: nil)
                 if embedded.presentedViewController != nil {
                     embedded.dismiss(animated: true, completion: nil)
                 }
