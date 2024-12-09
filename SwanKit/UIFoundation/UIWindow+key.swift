@@ -11,12 +11,12 @@ import UIKit
 public extension UIWindow {
     static var key: UIWindow? {
         if #available(iOS 13.0, tvOS 13.0, *) {
-            return UIApplication.shared.connectedScenes
+            UIApplication.shared.connectedScenes
                 .compactMap { $0 as? UIWindowScene }
                 .first { $0.activationState == .foregroundActive }?
                 .windows.first { $0.isKeyWindow }
         } else {
-            return UIApplication.shared.keyWindow
+            UIApplication.shared.keyWindow
         }
     }
 }

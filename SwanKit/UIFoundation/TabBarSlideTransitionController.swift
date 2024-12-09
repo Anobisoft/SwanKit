@@ -66,12 +66,15 @@ public class TabBarSlideTransitioning: NSObject, UIViewControllerAnimatedTransit
     private let style: Style
     public var duration: TimeInterval
     
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(
+        using transitionContext: UIViewControllerContextTransitioning?
+    ) -> TimeInterval {
         return duration
     }
 
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-
+    public func animateTransition(
+        using transitionContext: UIViewControllerContextTransitioning
+    ) {
         guard
             let fromVC = transitionContext.viewController(forKey: .from),
             let toVC = transitionContext.viewController(forKey: .to)

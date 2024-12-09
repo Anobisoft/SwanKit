@@ -9,46 +9,44 @@
 import Foundation
 
 public extension JSONDecoder {
-
-    convenience init(_ keyDecodingStrategy: KeyDecodingStrategy) {
+    convenience init(strategy: KeyDecodingStrategy) {
         self.init()
         self.keyDecodingStrategy = keyDecodingStrategy
     }
 
-    convenience init(_ strategy: DataDecodingStrategy) {
+    convenience init(strategy: DataDecodingStrategy) {
         self.init()
         self.dataDecodingStrategy = strategy
     }
 
-    convenience init(_ strategy: DateDecodingStrategy) {
+    convenience init(strategy: DateDecodingStrategy) {
         self.init()
         self.dateDecodingStrategy = strategy
     }
 
-    convenience init(_ strategy: NonConformingFloatDecodingStrategy) {
+    convenience init(strategy: NonConformingFloatDecodingStrategy) {
         self.init()
         self.nonConformingFloatDecodingStrategy = strategy
     }
 }
 
 public extension JSONDecoder {
-
-    func keyDecodingStrategy(_ strategy: KeyDecodingStrategy) -> JSONDecoder {
+    func keyDecodingStrategy(_ strategy: KeyDecodingStrategy) -> Self {
         self.keyDecodingStrategy = strategy
         return self
     }
 
-    func dateDecodingStrategy(_ strategy: DateDecodingStrategy) -> JSONDecoder {
+    func dateDecodingStrategy(_ strategy: DateDecodingStrategy) -> Self {
         self.dateDecodingStrategy = strategy
         return self
     }
 
-    func dataDecodingStrategy(_ strategy: DataDecodingStrategy) -> JSONDecoder {
+    func dataDecodingStrategy(_ strategy: DataDecodingStrategy) -> Self {
         self.dataDecodingStrategy = strategy
         return self
     }
 
-    func nonConformingFloatDecodingStrategy(_ strategy: NonConformingFloatDecodingStrategy) -> JSONDecoder {
+    func nonConformingFloatDecodingStrategy(_ strategy: NonConformingFloatDecodingStrategy) -> Self {
         self.nonConformingFloatDecodingStrategy = strategy
         return self
     }

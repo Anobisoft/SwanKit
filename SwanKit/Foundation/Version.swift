@@ -9,14 +9,6 @@
 import Foundation
 
 public struct Version {
-
-    public enum FormatStyle: String {
-        case short = "%MJ[.MN][.P][.B]"
-        case medium = "v%MJ.%MN[.P][b%B]"
-        case long = "v%MJ.%MN.%P build %B"
-        case full = "version %MJ.%MN.%P build %B"
-    }
-
     public var major: String
     public var minor: String?
     public var patch: String?
@@ -40,7 +32,7 @@ public struct Version {
             }
         }
         self.major = major
-        if let build = build {
+        if let build {
             self.build = build
         }
     }
@@ -60,19 +52,32 @@ public struct Version {
         result = result.replacingOccurrences(of: "%B", with: required(build))
         return result
     }
+}
 
-    public func string(style: FormatStyle) -> String {
-        string(format: style.rawValue)
+// MARK: - Version.Style
+
+public extension Version {
+    enum Style: String {
+        case short = "%MJ[.MN][.P][.B]"
+        case medium = "v%MJ.%MN[.P][b%B]"
+        case long = "v%MJ.%MN.%P build %B"
+        case full = "version %MJ.%MN.%P build %B"
     }
 
-    private func optional(_ value: String?) -> String {
-        guard let value = value else {
-            return ""
-        }
+    func string(style: Style) -> String {
+        string(format: style.rawValue)
+    }
+}
+
+// MARK: - Private
+
+private extension Version {
+    func optional(_ value: String?) -> String {
+        guard let value else { return "" }
         return "$1" + value
     }
 
-    private func required(_ value: String?) -> String {
+    func required(_ value: String?) -> String {
         value ?? "0"
     }
 }

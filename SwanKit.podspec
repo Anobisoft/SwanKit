@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
     s.name              = 'SwanKit'
-    s.version           = '0.0.7'
+    s.version           = '0.0.8'
     s.summary           = 'SwanKit - collection of tools and extesions.'
 
     s.description       = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.author            = { 'Stanislav Pletnev' => 'anobisoft@gmail.com' }
     s.social_media_url  = 'https://github.com/Anobisoft'
 
-    s.swift_version     = '5.1'
+    s.swift_version     = '5.10'
 
     s.ios.deployment_target     = '12.0'
     s.tvos.deployment_target    = '12.0'

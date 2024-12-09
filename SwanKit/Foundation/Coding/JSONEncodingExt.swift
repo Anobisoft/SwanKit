@@ -9,7 +9,6 @@
 import Foundation
 
 public extension JSONEncoder {
-
     convenience init(_ strategy: KeyEncodingStrategy) {
         self.init()
         self.keyEncodingStrategy = strategy
@@ -32,7 +31,6 @@ public extension JSONEncoder {
 }
 
 public extension JSONEncoder {
-
     func keyEncodingStrategy(_ strategy: KeyEncodingStrategy) -> JSONEncoder {
         self.keyEncodingStrategy = strategy
         return self

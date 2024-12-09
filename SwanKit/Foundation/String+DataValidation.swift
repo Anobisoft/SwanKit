@@ -9,34 +9,30 @@
 import Foundation
 
 public extension String {
-    
     var isValidEmail: Bool {
-        self.isValidLink(scheme: "mailto")
+        get throws { try isValidLink(scheme: "mailto") }
     }
-    
-    func isValidLink(scheme: String? = nil) -> Bool {
+
+    func isValidLink(scheme: String? = nil) throws -> Bool {
         var check: TextCheck? = nil
-        if let scheme = scheme {
-            check = { result in
-                return result.url != nil && result.url!.scheme == scheme
-            }
+        if let scheme {
+            check = { $0.url?.scheme == scheme }
         }
-        return self.isValid(type: .link, check: check)
+        return try isValid(type: .link, check: check)
     }
-    
+
     var isValidPhonenumber: Bool {
-        self.isValid(type: .phoneNumber)
+        get throws { try isValid(type: .phoneNumber) }
     }
-    
+
     typealias TextCheck = (NSTextCheckingResult) -> Bool
-    
-    func isValid(type: NSTextCheckingResult.CheckingType, check: TextCheck? = nil) -> Bool {
-        
-        let detector = try! NSDataDetector(types: type.rawValue)
+
+    func isValid(type: NSTextCheckingResult.CheckingType, check: TextCheck? = nil) throws -> Bool {
+        let detector = try NSDataDetector(types: type.rawValue)
         let range = NSRange(location: 0, length: self.count)
         var valid: Bool = false
-        detector.enumerateMatches(in: self, options: .reportCompletion, range: range) { (result, flags, stop: UnsafeMutablePointer<ObjCBool>) in
-            guard let result = result else { return }
+        detector.enumerateMatches(in: self, options: .reportCompletion, range: range) { result, _, stop in
+            guard let result else { return }
             valid = result.resultType.contains(type)
             valid = valid && (result.range == range)
             if let check = check {
@@ -44,8 +40,6 @@ public extension String {
             }
             stop.initialize(to: ObjCBool(valid))
         }
-        
         return valid
     }
-    
 }

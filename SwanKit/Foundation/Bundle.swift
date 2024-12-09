@@ -9,25 +9,24 @@
 import Foundation
 
 public extension Bundle {
-
     static var appExecutable: String {
-        main.executable!
+        main.executable^||
     }
 
     static var appName: String {
-        main.name!
+        main.name^||
     }
 
     static var appDisplayName: String {
-        main.displayName!
+        main.displayName^||
     }
 
     static var appVersion: String {
-        main.shortVersion!
+        main.shortVersion^||
     }
 
     static var appBuild: String {
-        main.buildNumber!
+        main.buildNumber^||
     }
 
     var executable: String? {
@@ -48,5 +47,19 @@ public extension Bundle {
 
     var buildNumber: String? {
         infoDictionary?[kCFBundleVersionKey as String] as? String
+    }
+
+    var localizableStrings: [String: String]? {
+        guard let fileURL = url(forResource: "Localizable", withExtension: "strings") else {
+            return nil
+        }
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let plist = try PropertyListSerialization.propertyList(from: data, format: .none)
+            return plist as? [String: String]
+        } catch {
+            print(error)
+        }
+        return nil
     }
 }

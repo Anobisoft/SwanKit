@@ -9,13 +9,12 @@
 import UIKit
 
 public extension UIView {
-    
     @IBInspectable
     @objc dynamic var cornerRadius: CGFloat {
         set { layer.cornerRadius = newValue }
         get { return layer.cornerRadius }
     }
-    
+
     @IBInspectable
     @objc dynamic var borderColor: UIColor? {
         set { layer.borderColor = newValue?.cgColor }
@@ -24,7 +23,7 @@ public extension UIView {
             return UIColor.init(cgColor: borderColor)
         }
     }
-    
+
     @IBInspectable
     @objc dynamic var borderWidth: CGFloat {
         set { layer.borderWidth = newValue }

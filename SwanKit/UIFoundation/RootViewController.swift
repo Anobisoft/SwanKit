@@ -13,30 +13,29 @@ public extension UIApplication {
         get { RootViewController.shared.current }
         set { RootViewController.shared.current = newValue }
     }
-    
+
     var rootViewController: UIViewController? {
         get { RootViewController.shared.current }
         set { RootViewController.shared.current = newValue }
     }
 }
 
-
 final class RootViewController: UIViewController {
-    
+
     public struct Config {
         public var animationOptions: UIView.AnimationOptions
         public var animationDuration: CGFloat
-        
+
         static let `default` = Config(animationOptions: .transitionFlipFromTop, animationDuration: 0.3)
     }
-    
+
     var config: Config = .default
-    
+
     public init(_ config: Config) {
         self.config = config
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.current = Self.instance.embedded
@@ -50,9 +49,9 @@ final class RootViewController: UIViewController {
             embedded.didMove(toParent: self)
         }
     }
-    
+
     static var instance = RootViewController(.default)
-    
+
     public static var shared: RootViewController {
         return makeRoot()
     }
@@ -73,7 +72,7 @@ final class RootViewController: UIViewController {
             return root
         }
     }
-    
+
     public var current: UIViewController? {
         set {
             guard let newValue = newValue, newValue != self else {
@@ -91,7 +90,7 @@ final class RootViewController: UIViewController {
                 return
             }
             if embedded != newValue {
-                UIView.transition(from: embedded.view, 
+                UIView.transition(from: embedded.view,
                                   to: newValue.view,
                                   duration: config.animationDuration,
                                   options: config.animationOptions,
@@ -125,7 +124,6 @@ final class RootViewController: UIViewController {
             vc.didMove(toParent: self)
         }
     }
-
 }
 
 private extension UIViewController {

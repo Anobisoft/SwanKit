@@ -7,11 +7,10 @@
 //
 
 public extension UIImage {
-    
     func resized(_ newSize: CGSize, scale: CGFloat = 1.0) -> UIImage {
-        
+
         guard self.size != newSize else { return self }
-        
+
         UIGraphicsBeginImageContextWithOptions(newSize, false, scale);
         self.draw(in: .init(origin: .zero, size: newSize))
         let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -19,17 +18,17 @@ public extension UIImage {
 
         return newImage
     }
-    
+
     enum ScaleMode {
         case aspectFit
         case aspectFill
         case scaleToFill
     }
-    
+
     func scaled(to target: CGSize, mode: ScaleMode = .aspectFit) -> UIImage {
         var height = target.height
         var width  = height * size.width / size.height
-        
+
         var recalc = false
         switch mode {
         case .aspectFit:
@@ -39,7 +38,7 @@ public extension UIImage {
         case .scaleToFill:
             width = target.width
         }
-        
+
         if recalc {
             width  = target.width
             height = width * size.height / size.width
@@ -47,5 +46,4 @@ public extension UIImage {
 
         return resized(CGSize(width: width, height: height), scale: self.scale)
     }
-    
 }

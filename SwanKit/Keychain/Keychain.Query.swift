@@ -31,6 +31,7 @@ extension Keychain.QueryData {
             self[key as String] = newValue
         }
     }
+
     subscript(key: CFString) -> String? {
         get { self[key as String] as? String }
         set {
@@ -38,6 +39,7 @@ extension Keychain.QueryData {
             self[key as String] = newValue as AnyObject
         }
     }
+
     subscript(key: CFString) -> Data? {
         get { self[key as String] as? Data }
         set {
@@ -45,13 +47,14 @@ extension Keychain.QueryData {
             self[key as String] = newValue as AnyObject
         }
     }
+
     subscript(key: CFString) -> Bool {
         get { CFBooleanCast(self[key as String]) }
         set { self[key as String] = (newValue ? kCFBooleanTrue : kCFBooleanFalse) as AnyObject }
     }
     
-    func CFBooleanCast(_ optional: AnyObject?) -> Bool {
-        guard let value = optional else {
+    func CFBooleanCast(_ value: AnyObject?) -> Bool {
+        guard let value else {
             return false
         }
         guard CFGetTypeID(value) == CFBooleanGetTypeID() else {

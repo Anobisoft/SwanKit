@@ -9,13 +9,12 @@
 import UIKit
 
 public extension UIView {
-    
     struct Shadow {
         var radius  : Float
         var color   : UIColor
         var opacity : Float
         var offset  : CGSize
-        
+
         public init(radius  : Float   = 10,
                     color   : UIColor = .black,
                     opacity : Float   = 1,
@@ -27,7 +26,7 @@ public extension UIView {
             self.offset = offset
         }
     }
-    
+
     @discardableResult
     func shadow(radius: Float = 10, color: UIColor = .black, opacity: Float = 1, offset: CGSize = .zero) -> Self {
         self.layer.shadowRadius = CGFloat(radius)
@@ -37,7 +36,7 @@ public extension UIView {
         self.layer.masksToBounds = false
         return self
     }
-    
+
     @discardableResult
     func shadow(_ shadow: Shadow) -> Self {
         self.shadow(radius: shadow.radius, color: shadow.color, opacity: shadow.opacity, offset: shadow.offset)

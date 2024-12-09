@@ -14,6 +14,18 @@ public protocol ListElement: AnyObject {
     init(_ object: T?)
 }
 
+public class List<Element: ListElement> {
+    public init() {}
+
+    private(set) var head: Element?
+    private(set) var tail: Element?
+    private(set) var count: Int = 0
+
+    deinit { clear() }
+
+    private var unfair_lock = os_unfair_lock()
+}
+
 // MARK: - Operators
 
 infix operator +> // push
@@ -52,7 +64,6 @@ public extension List {
 // MARK: - Imaplementation
 
 public extension List {
-
     func add(_ element: Element) {
         os_unfair_lock_lock(&unfair_lock)
         if head == nil {
@@ -105,6 +116,9 @@ public extension List {
 
     func remove(_ element: Element) {
         os_unfair_lock_lock(&unfair_lock)
+        defer {
+            os_unfair_lock_unlock(&unfair_lock)
+        }
         if let prev = element.prev {
             prev.next = element.next
         } else {
@@ -118,7 +132,6 @@ public extension List {
             tail = element.prev
         }
         count -= 1
-        os_unfair_lock_unlock(&unfair_lock)
     }
 
     private func first(where predicate: (Element) -> Bool) -> Element? {
@@ -144,7 +157,7 @@ public extension List {
         }?.object
     }
 
-    func forEach(_ block:(Element.T) -> Void) {
+    func forEach(_ block: (Element.T) -> Void) {
         _ = first { (element: Element) -> Bool in
             guard let item = element.object else { fatalError() }
             block(item)
@@ -167,19 +180,6 @@ public extension List {
     func cleanup() {
         forEach { _ in }
     }
-}
-
-public class List<Element: ListElement> {
-
-    public init() {}
-
-    private(set) var head: Element?
-    private(set) var tail: Element?
-    private(set) var count: Int = 0
-
-    deinit { clear() }
-
-    private var unfair_lock = os_unfair_lock()
 }
 
 public class RetainList<Item>: List<RetainList.Element<Item>> {

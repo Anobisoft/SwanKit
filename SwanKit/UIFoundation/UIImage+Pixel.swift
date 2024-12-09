@@ -9,9 +9,8 @@
 import UIKit
 
 public extension UIImage {
-    
     static let pixelCache = Cache<UIColor, UIImage>()
-    
+
     static func pixel(_ color: UIColor) -> UIImage {
         if let cached = pixelCache[color] {
             return cached

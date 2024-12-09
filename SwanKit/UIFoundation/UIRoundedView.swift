@@ -9,9 +9,9 @@
 import UIKit
 
 public class UIRoundedView: UIView {
-    
+
     public var corners: UIRectCorner = []
-    
+
     override public var cornerRadius: CGFloat {
         get {
             _cornerRadius
@@ -26,13 +26,15 @@ public class UIRoundedView: UIView {
         layer.mask = shapeLayer
         super.layoutSublayers(of: layer)
     }
-    
+
     private var _cornerRadius: CGFloat = 0
     private var shapeLayer: CAShapeLayer = CAShapeLayer()
-    
+
     private var roundPath: CGPath {
-        UIBezierPath(roundedRect: bounds,
-                     byRoundingCorners: corners,
-                     cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
+        UIBezierPath(
+            roundedRect: bounds,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)
+        ).cgPath
     }
 }
