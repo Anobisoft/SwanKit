@@ -16,30 +16,33 @@ public struct Access {
     public typealias Completion = (_ granted: Bool) -> Void
 
     public static let photoLibrary: AccessProvider.Type = PHPhotoLibrary.self
+
+#if !os(tvOS)
     @available(tvOS, unavailable)
     public static let video: AccessProvider.Type = Video.self
     @available(tvOS, unavailable)
     public static let audio: AccessProvider.Type = Audio.self
-    #if !os(tvOS)
+
     public static let speechRecognition: AccessProvider.Type = SFSpeechRecognizer.self
-    #endif
-    
+
     @available(tvOS, unavailable)
     private struct Video: AccessProvider {
         static func accessRequest(completion: @escaping Access.Completion) {
             AVCaptureDevice.accessRequest(.video, completion: completion)
         }
     }
-    
+
     @available(tvOS, unavailable)
     private struct Audio: AccessProvider {
         static func accessRequest(completion: @escaping Access.Completion) {
             AVCaptureDevice.accessRequest(.audio, completion: completion)
         }
     }
+#endif
 }
 
 #if !os(tvOS)
+
 import Speech
 
 @available(tvOS, unavailable)
@@ -54,21 +57,19 @@ extension SFSpeechRecognizer: AccessProvider {
                 let granted = status == .authorized
                 completion(granted)
                 if !granted {
-                    #if os(macOS)
+#if os(macOS)
                     NSApplication.openSecurityPrivacySettings(.speechRecognition)
-                    #else
+#else
                     UIApplication.openSettings()
-                    #endif
+#endif
                 }
             }
         }
     }
 }
-#endif
 
 @available(tvOS, unavailable)
 private extension AVCaptureDevice {
-    
     static func accessRequest(_ type: AVMediaType, completion: @escaping Access.Completion) {
         if AVCaptureDevice.authorizationStatus(for: type) == .authorized {
             completion(true)
@@ -78,7 +79,7 @@ private extension AVCaptureDevice {
             DispatchQueue.main.async {
                 completion(granted)
                 if !granted {
-                    #if os(macOS)
+#if os(macOS)
                     switch type {
                     case .audio:
                         NSApplication.openSecurityPrivacySettings(.microphone)
@@ -87,18 +88,19 @@ private extension AVCaptureDevice {
                     default:
                         NSApplication.openSecurityPrivacySettings()
                     }
-                    #else
+#else
                     UIApplication.openSettings()
-                    #endif
+#endif
                 }
-                
+
             }
         }
     }
 }
 
+#endif
+
 extension PHPhotoLibrary: AccessProvider {
-    
     public static func accessRequest(completion: @escaping Access.Completion) {
         if self.authorizationStatus() == .authorized {
             completion(true)
@@ -109,14 +111,13 @@ extension PHPhotoLibrary: AccessProvider {
                 let granted = status == .authorized
                 completion(granted)
                 if !granted {
-                    #if os(macOS)
+#if os(macOS)
                     NSApplication.openSecurityPrivacySettings(.photos)
-                    #else
+#else
                     UIApplication.openSettings()
-                    #endif
+#endif
                 }
             }
         }
     }
 }
-
