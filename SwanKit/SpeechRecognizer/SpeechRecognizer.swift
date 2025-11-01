@@ -1,10 +1,3 @@
-//
-//  SpeechRecognizer.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2020-03-13.
-//  Copyright © 2020 Anobisoft. All rights reserved.
-//
 
 import Speech
 import AVFoundation

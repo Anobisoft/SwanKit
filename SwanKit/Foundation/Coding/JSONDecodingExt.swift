@@ -1,10 +1,3 @@
-//
-//  JSONDecodingExt.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-11-28.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import Foundation
 

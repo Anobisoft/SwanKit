@@ -1,46 +1,64 @@
-
+platform :ios, '15.6'
 use_frameworks!
+inhibit_all_warnings!
 
-def shared_pods
-  pod 'SwanKit', :path => './'
-end
+workspace 'SwanKit'
 
+# iOS таргеты
 target 'SwanKit_iOS' do
-  platform :ios, '12.0'
-  shared_pods
-  
-  target 'SwanKit_iOSTests' do
-      inherit! :search_paths
-  end
+  project 'SwanKit.xcodeproj'
 end
 
+target 'SwanKit_iOSTests' do
+  project 'SwanKit.xcodeproj'
+  inherit! :search_paths
+end
+
+target 'SwanKitDemo_iOS' do
+  project 'SwanKit.xcodeproj'
+end
+
+# tvOS таргеты
 target 'SwanKit_tvOS' do
-  platform :tvos, '12.0'
-  shared_pods
-  
-  target 'SwanKit_tvOSTests' do
-    inherit! :search_paths
-  end
+  project 'SwanKit.xcodeproj'
 end
 
+target 'SwanKit_tvOSTests' do
+  project 'SwanKit.xcodeproj'
+  inherit! :search_paths
+end
+
+target 'SwanKitDemo_tvOS' do
+  project 'SwanKit.xcodeproj'
+end
+
+# macOS таргеты
 target 'SwanKit_macOS' do
-  platform :macos, '10.15'
-  shared_pods
-  
-  target 'SwanKit_macOSTests' do
-    inherit! :search_paths
-  end
+  project 'SwanKit.xcodeproj'
 end
 
-#target 'SwanKit_watchOS' do
-#  platform :watchos, '3.0'
-#  shared_pods
-#end
+target 'SwanKit_macOSTests' do
+  project 'SwanKit.xcodeproj'
+  inherit! :search_paths
+end
 
-#target 'SwanKit_watchOS_Extension' do
-#  platform :watchos, '3.0'
-#  shared_pods
-#end
+target 'SwanKitDemo_macOS' do
+  project 'SwanKit.xcodeproj'
+end
 
-
-
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      
+      # Устанавливаем deployment target в зависимости от платформы
+      if target.name.include?('OSX') || target.name.include?('macOS')
+        config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '26.0.1'
+      elsif target.name.include?('tvOS')
+        config.build_settings['TVOS_DEPLOYMENT_TARGET'] = '15.6'
+      else
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.6'
+      end
+    end
+  end
+end

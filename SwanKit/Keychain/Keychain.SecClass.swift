@@ -1,21 +1,31 @@
-//
-//  Keychain.SecClass.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2020-08-04.
-//  Copyright © 2020 Anobisoft. All rights reserved.
-//
 
 import Foundation
 
 extension Keychain {
-    enum SecClass {
+    enum SecClass: RawRepresentable {
         case internetPassword
         case genericPassword
         case certificate
         case key
         case identity
-        
+
+        init?(rawValue: CFString) {
+            switch rawValue {
+            case kSecClassInternetPassword:
+                self = .internetPassword
+            case kSecClassGenericPassword:
+                self = .genericPassword
+            case kSecClassCertificate:
+                self = .certificate
+            case kSecClassKey:
+                self = .key
+            case kSecClassIdentity:
+                self = .identity
+            default:
+                return nil
+            }
+        }
+
         var rawValue: CFString {
             switch self {
             case .internetPassword:

@@ -1,10 +1,3 @@
-//
-//  Optional.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2024-12-03.
-//  Copyright © 2024 Anobisoft. All rights reserved.
-//
 
 import Foundation
 
@@ -14,7 +7,7 @@ public protocol Emptyable {
     static var empty: ValueType { get }
 }
 
-extension Emptyable {
+public extension Emptyable {
     var isNotEmpty: Bool { !isEmpty }
 }
 

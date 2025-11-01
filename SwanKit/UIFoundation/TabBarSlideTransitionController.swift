@@ -1,13 +1,7 @@
-//
-//  TabBarSlideTransition.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-25-11.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import UIKit
 
+@MainActor
 public struct TabBarDelegate {
     public static let removeSlideTransition: UITabBarControllerDelegate =
         TabBarTransitionControllerDelegate(slide: .init(.removeToRight), .init(.removeToLeft))

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Anobisoft. All rights reserved.
 //
 
+import UIKit
+
 public extension UIImage {
     func resized(_ newSize: CGSize, scale: CGFloat = 1.0) -> UIImage {
 
@@ -19,24 +21,20 @@ public extension UIImage {
         return newImage
     }
 
-    enum ScaleMode {
-        case aspectFit
-        case aspectFill
-        case scaleToFill
-    }
-
-    func scaled(to target: CGSize, mode: ScaleMode = .aspectFit) -> UIImage {
+    func scaled(to target: CGSize, mode: UIView.ContentMode = .scaleAspectFit) -> UIImage {
         var height = target.height
         var width  = height * size.width / size.height
 
         var recalc = false
         switch mode {
-        case .aspectFit:
+        case .scaleAspectFit:
             recalc = width > target.width
-        case .aspectFill:
+        case .scaleAspectFill:
             recalc = width < target.width
         case .scaleToFill:
             width = target.width
+        default:
+            break
         }
 
         if recalc {

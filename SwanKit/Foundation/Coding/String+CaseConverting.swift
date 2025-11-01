@@ -1,10 +1,3 @@
-//
-//  String+CaseConverting.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-12-02.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import Foundation
 

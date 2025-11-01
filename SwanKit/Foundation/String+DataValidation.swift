@@ -1,10 +1,3 @@
-//
-//  String+DataValidation.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2018-08-13.
-//  Copyright © 2018 Anobisoft. All rights reserved.
-//
 
 import Foundation
 
@@ -21,7 +14,7 @@ public extension String {
         return try isValid(type: .link, check: check)
     }
 
-    var isValidPhonenumber: Bool {
+    var isValidPhoneNumber: Bool {
         get throws { try isValid(type: .phoneNumber) }
     }
 

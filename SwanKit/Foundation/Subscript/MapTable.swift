@@ -1,10 +1,3 @@
-//
-//  MapTable.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-11-29.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import Foundation
 

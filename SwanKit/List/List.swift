@@ -1,10 +1,5 @@
-//
-//  List.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2018-10-14
-//  Copyright © 2018 Anobisoft. All rights reserved.
-//
+
+import Foundation
 
 public protocol ListElement: AnyObject {
     associatedtype T

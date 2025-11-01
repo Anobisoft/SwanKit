@@ -1,11 +1,3 @@
-//
-//  Dictionary+RawRepresetable.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 14.04.2023
-//  Copyright © 2023 Anobisoft. All rights reserved.
-//
-
 
 import Foundation
 

@@ -1,0 +1,238 @@
+name: SwanKit
+options:
+  bundleIdPrefix: com.anobisoft
+  deploymentTarget:
+    iOS: 15.6
+    tvOS: 15.6
+    macOS: 26.0.1
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+  
+fileGroups:
+  - project.yml
+  - SwanKit.podspec
+  - Podfile
+  - README.md
+  - LICENSE
+  - .gitignore
+  
+targets:
+  # Фреймворки для каждой платформы
+  SwanKit_iOS:
+    type: framework
+    platform: iOS
+    deploymentTarget: "15.6"
+    sources: 
+      - path: SwanKit
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit
+      PRODUCT_NAME: SwanKit
+      BUILD_LIBRARY_FOR_DISTRIBUTION: YES
+      SKIP_INSTALL: NO
+      CODE_SIGN_IDENTITY: ""
+      CODE_SIGNING_REQUIRED: NO
+      CODE_SIGNING_ALLOWED: NO
+
+  SwanKit_tvOS:
+    type: framework
+    platform: tvOS
+    deploymentTarget: "15.6"
+    sources: 
+      - path: SwanKit
+        excludes: 
+          - "**/ImagePicker/**"
+          - "**/SpeechRecognizer/**"
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit
+      PRODUCT_NAME: SwanKit
+      BUILD_LIBRARY_FOR_DISTRIBUTION: YES
+      SKIP_INSTALL: NO
+      CODE_SIGN_IDENTITY: ""
+      CODE_SIGNING_REQUIRED: NO
+      CODE_SIGNING_ALLOWED: NO
+
+  SwanKit_macOS:
+    type: framework
+    platform: macOS
+    deploymentTarget: "26.0.1"
+    sources:
+      - path: SwanKit
+        excludes: 
+          - "**/ImagePicker/**"
+          - "**/UIFoundation/**"
+          - "**/Appearance/**"
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit
+      PRODUCT_NAME: SwanKit
+      BUILD_LIBRARY_FOR_DISTRIBUTION: YES
+      SKIP_INSTALL: NO
+      CODE_SIGN_IDENTITY: ""
+      CODE_SIGNING_REQUIRED: NO
+      CODE_SIGNING_ALLOWED: NO
+
+  # Тестовые таргеты
+  SwanKit_iOSTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "15.6"
+    sources: 
+      - path: Tests
+        excludes: 
+          - "**/macOS/**"
+    dependencies:
+      - target: SwanKit_iOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit.tests.ios
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SwanKit.framework/SwanKit"
+
+  SwanKit_tvOSTests:
+    type: bundle.unit-test
+    platform: tvOS
+    deploymentTarget: "15.6"
+    sources: 
+      - path: Tests
+        excludes: 
+          - "**/macOS/**"
+          - "**/iOS/**"
+    dependencies:
+      - target: SwanKit_tvOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit.tests.tvos
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SwanKit.framework/SwanKit"
+
+  SwanKit_macOSTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "10.15"
+    sources: 
+      - path: Tests
+        excludes: 
+          - "**/iOS/**"
+    dependencies:
+      - target: SwanKit_macOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit.tests.macos
+
+  # Демо приложения для каждой платформы
+  SwanKitDemo_iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.6"
+    sources: 
+      - path: Demo/SwanKitDemo_iOS
+    dependencies:
+      - target: SwanKit_iOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit.demo.ios
+      PRODUCT_NAME: SwanKitDemo
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      CODE_SIGN_STYLE: Automatic
+      DEVELOPMENT_TEAM: "" # Добавьте ваш Team ID
+      TARGETED_DEVICE_FAMILY: "1,2" # iPhone & iPad
+
+  SwanKitDemo_tvOS:
+    type: application
+    platform: tvOS
+    deploymentTarget: "15.6"
+    sources: 
+      - path: Demo/SwanKitDemo_tvOS
+    dependencies:
+      - target: SwanKit_tvOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit.demo.tvos
+      PRODUCT_NAME: SwanKitDemo
+      ASSETCATALOG_COMPILER_APPICON_NAME: App Icon
+      CODE_SIGN_STYLE: Automatic
+      DEVELOPMENT_TEAM: "" # Добавьте ваш Team ID
+
+  SwanKitDemo_macOS:
+    type: application
+    platform: macOS
+    deploymentTarget: "26.0.1"
+    sources:
+      - path: Demo/SwanKitDemo_macOS
+    dependencies:
+      - target: SwanKit_macOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit.demo.macos
+      PRODUCT_NAME: SwanKitDemo
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      CODE_SIGN_STYLE: Automatic
+      DEVELOPMENT_TEAM: "" # Добавьте ваш Team ID
+
+schemes:
+  # Схемы для фреймворков
+  SwanKit_iOS:
+    build:
+      targets:
+        SwanKit_iOS: [run, test]
+    test:
+      targets:
+        - SwanKit_iOSTests
+
+  SwanKit_tvOS:
+    build:
+      targets:
+        SwanKit_tvOS: [run, test]
+    test:
+      targets:
+        - SwanKit_tvOSTests
+
+  SwanKit_macOS:
+    build:
+      targets:
+        SwanKit_macOS: [run, test]
+    test:
+      targets:
+        - SwanKit_macOSTests
+
+  # Схемы для демо приложений
+  SwanKitDemo_iOS:
+    build:
+      targets:
+        SwanKitDemo_iOS: [run]
+    run:
+      executable: SwanKitDemo_iOS
+    profile:
+      executable: SwanKitDemo_iOS
+    analyze:
+      executable: SwanKitDemo_iOS
+    archive:
+      executable: SwanKitDemo_iOS
+
+  SwanKitDemo_tvOS:
+    build:
+      targets:
+        SwanKitDemo_tvOS: [run]
+    run:
+      executable: SwanKitDemo_tvOS
+    profile:
+      executable: SwanKitDemo_tvOS
+    analyze:
+      executable: SwanKitDemo_tvOS
+    archive:
+      executable: SwanKitDemo_tvOS
+
+  SwanKitDemo_macOS:
+    build:
+      targets:
+        SwanKitDemo_macOS: [run]
+    run:
+      executable: SwanKitDemo_macOS
+    profile:
+      executable: SwanKitDemo_macOS
+    analyze:
+      executable: SwanKitDemo_macOS
+    archive:
+      executable: SwanKitDemo_macOS
+
+settings:
+  base:
+    SWIFT_VERSION: 6.2
+    CODE_SIGN_STYLE: Manual
+  configs:
+    debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+    release:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: RELEASE
+

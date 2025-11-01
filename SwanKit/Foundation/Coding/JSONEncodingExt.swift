@@ -1,10 +1,3 @@
-//
-//  JSONEncodingExt.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2020-01-31.
-//  Copyright © 2020 Anobisoft. All rights reserved.
-//
 
 import Foundation
 
@@ -78,4 +71,3 @@ public struct ScreamingSnakeKey: CodingKey {
     public var stringValue: String
     public var intValue: Int?
 }
-

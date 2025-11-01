@@ -14,7 +14,7 @@ To integrate **SwanKit** into your Xcode project using [CocoaPods](http://cocoap
 use_frameworks! #optional
 
 target 'iOSTargetName' do
-  platform :ios, '12.0'
+  platform :ios, '15.6'
   pod 'SwanKit'
 end
 
@@ -28,5 +28,5 @@ $ pod install
 
 | Minimum iOS Target | Minimum macOS Target | Minimum tvOS Target |
 |:------------------:|:--------------------:|:-------------------:|
-| iOS 12.0            | OS X 10.15           | tvOS 12.0            |
+| iOS 15.6           | OS X 26.0.1          | tvOS 15.6           |
 

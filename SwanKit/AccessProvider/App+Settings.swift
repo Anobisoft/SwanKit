@@ -1,17 +1,9 @@
-//
-//  App+Settings.swift
-//  Pods-SwanKit_iOS
-//
-//  Created by Stanislav Pletnev on 2020-03-13.
-//  Copyright © 2020 Anobisoft. All rights reserved.
-//
 
 #if os(macOS)
 
 import Foundation
 
 public extension NSApplication {
-
     enum PrivacySection: String {
         case locationServices
         case contacts

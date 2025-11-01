@@ -1,10 +1,3 @@
-//
-//  NSObject+swizzling.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-23-11.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import Foundation
 

@@ -1,15 +1,9 @@
-//
-//  ImagePickerSource.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-12-03.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import UIKit
 
 public extension ImagePicker {
-    
+    private typealias SourceType = UIImagePickerController.SourceType
+
     struct SourceOptions: OptionSet {
         public let rawValue: Int
         
@@ -17,10 +11,10 @@ public extension ImagePicker {
             self.rawValue = rawValue
         }
         
-        public static let camera           = SourceOptions(rawValue: 1 << UIImagePickerController.SourceType.camera.rawValue)
-        public static let photoLibrary     = SourceOptions(rawValue: 1 << UIImagePickerController.SourceType.photoLibrary.rawValue)
-        public static let savedPhotosAlbum = SourceOptions(rawValue: 1 << UIImagePickerController.SourceType.savedPhotosAlbum.rawValue)
-        
+        public static let camera           = SourceOptions(rawValue: 1 << SourceType.camera.rawValue)
+        public static let photoLibrary     = SourceOptions(rawValue: 1 << SourceType.photoLibrary.rawValue)
+        public static let savedPhotosAlbum = SourceOptions(rawValue: 1 << SourceType.savedPhotosAlbum.rawValue)
+
         public static let standard: SourceOptions = [.camera, .photoLibrary]
         public static let all: SourceOptions = [.camera, .photoLibrary, savedPhotosAlbum]
     }

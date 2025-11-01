@@ -7,16 +7,16 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
+            buildForProfiling = "YES"
             buildForArchiving = "NO"
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E58C18CEBE5B899A5ABD4E9B"
-               BuildableName = "SwanKit.framework"
-               BlueprintName = "SwanKit_iOS"
+               BlueprintIdentifier = "9D4200F60AA8CD60B92D173B"
+               BuildableName = "SwanKitDemo.app"
+               BlueprintName = "SwanKitDemo_tvOS"
                ReferencedContainer = "container:SwanKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,23 +30,13 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E58C18CEBE5B899A5ABD4E9B"
-            BuildableName = "SwanKit.framework"
-            BlueprintName = "SwanKit_iOS"
+            BlueprintIdentifier = "9D4200F60AA8CD60B92D173B"
+            BuildableName = "SwanKitDemo.app"
+            BlueprintName = "SwanKitDemo_tvOS"
             ReferencedContainer = "container:SwanKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B2EB86B85D83723E2977925"
-               BuildableName = "SwanKit_iOSTests.xctest"
-               BlueprintName = "SwanKit_iOSTests"
-               ReferencedContainer = "container:SwanKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -59,15 +49,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E58C18CEBE5B899A5ABD4E9B"
-            BuildableName = "SwanKit.framework"
-            BlueprintName = "SwanKit_iOS"
+            BlueprintIdentifier = "9D4200F60AA8CD60B92D173B"
+            BuildableName = "SwanKitDemo.app"
+            BlueprintName = "SwanKitDemo_tvOS"
             ReferencedContainer = "container:SwanKit.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,15 +66,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E58C18CEBE5B899A5ABD4E9B"
-            BuildableName = "SwanKit.framework"
-            BlueprintName = "SwanKit_iOS"
+            BlueprintIdentifier = "9D4200F60AA8CD60B92D173B"
+            BuildableName = "SwanKitDemo.app"
+            BlueprintName = "SwanKitDemo_tvOS"
             ReferencedContainer = "container:SwanKit.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

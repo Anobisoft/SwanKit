@@ -1,11 +1,7 @@
-//
-//  AccessProvider.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-11-06.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
+#if !os(macOS)
+import UIKit
+#endif
 import Photos
 
 public protocol AccessProvider {

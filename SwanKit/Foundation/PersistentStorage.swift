@@ -1,10 +1,3 @@
-//
-//  PersistentStorage.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-10-25.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import Foundation
 
@@ -115,7 +108,7 @@ public extension Storagable where Self: Codable {
     }
 }
 
-public struct FileStorage: PersistentStorage {
+public struct FileStorage: PersistentStorage, Sendable {
     public static let caches = try! FileStorage()
     public static let documents = try! FileStorage(.documents)
 

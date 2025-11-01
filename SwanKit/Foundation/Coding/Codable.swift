@@ -1,16 +1,9 @@
-//
-//  Codable.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2020-01-24.
-//  Copyright © 2020 Anobisoft. All rights reserved.
-//
 
 import Foundation
 
 public extension JSONDecoder {
     func decode<T: Decodable>(_ data: Data) throws -> T {
-        try self.decode(T.self, from: data)
+        try decode(T.self, from: data)
     }
 }
 
@@ -37,7 +30,5 @@ public protocol CustomizableCodingKeyMapping: CodingKey {
 }
 
 public extension CustomizableCodingKeyMapping {
-    var mapped: CodingKey {
-        self
-    }
+    var mapped: CodingKey { self }
 }

@@ -1,10 +1,3 @@
-//
-//  ImagePicker.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-10-30.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import UIKit
 

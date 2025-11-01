@@ -1,10 +1,3 @@
-//
-//  UIColor+RGB.swift
-//  SwanKit
-//
-//  Created by Stanislav Pletnev on 2019-11-11.
-//  Copyright © 2019 Anobisoft. All rights reserved.
-//
 
 import UIKit
 
