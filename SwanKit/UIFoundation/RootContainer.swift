@@ -61,7 +61,7 @@ public final class RootContainer: UIViewController {
                 removeEmbedded()
                 return
             }
-            guard let embedded else {
+            guard embedded != nil else {
                 embed(newValue)
                 return
             }

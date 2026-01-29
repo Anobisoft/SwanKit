@@ -36,6 +36,7 @@ public extension UITextField {
     }
 }
 
+@MainActor
 private struct UITextFieldProxy {
     static subscript(instance: NSObject) -> UIEdgeInsets? {
         get {

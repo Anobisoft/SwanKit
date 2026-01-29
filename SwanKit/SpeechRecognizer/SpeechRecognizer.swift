@@ -3,7 +3,6 @@ import Speech
 import AVFoundation
 
 public class SpeechRecognizer {
-
     public typealias ResultHandler = (String?) -> Void
 
     private var resultHandler: ResultHandler
@@ -17,18 +16,19 @@ public class SpeechRecognizer {
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask!
 
+    @MainActor
     public func startRecording() {
-        Access.speechRecognition.accessRequest { [weak self] granted in
-            guard granted else {
+        Task {
+            guard await Access.SpeechRecognizer.requestAccess() == .authorized else {
+                Access.SpeechRecognizer.openSettings()
                 return
             }
-            Access.audio.accessRequest { granted in
-                guard granted else {
-                    return
-                }
-                self?.granted = true
-                self?._startGrantedRecording()
+            guard await Access.Audio.requestAccess() else {
+                Access.Audio.openSettings()
+                return
             }
+            granted = true
+            startGrantedRecording()
         }
     }
 
@@ -44,7 +44,7 @@ public class SpeechRecognizer {
         request?.endAudio()
     }
 
-    private func _startGrantedRecording() {
+    private func startGrantedRecording() {
         let node = audioEngine.inputNode
         node.removeTap(onBus: 0)
         node.installTap(onBus: 0, bufferSize: 1024, format: nil) { [weak self] (buffer, _) in

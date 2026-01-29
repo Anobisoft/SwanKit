@@ -7,8 +7,8 @@ public extension UIViewController {
     }
 }
 
+@MainActor
 public class ImagePicker {
-
     public struct AlertAction {
         public typealias Handler = (_ tag: Int) -> Void
 

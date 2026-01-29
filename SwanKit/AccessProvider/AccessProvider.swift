@@ -3,117 +3,111 @@
 import UIKit
 #endif
 import Photos
+#if !os(tvOS)
+import Speech
+#endif
 
 public protocol AccessProvider {
-    static func accessRequest(completion: @escaping Access.Completion)
+    associatedtype AuthorizationStatus
+    static func requestAccess() async -> AuthorizationStatus
+    static func openSettings()
+}
+
+public protocol MultiLevelAccessProvider {
+    associatedtype AccessLevel
+    associatedtype AuthorizationStatus
+    static func requestAccess(level: AccessLevel) async -> AuthorizationStatus
+    static func openSettings()
 }
 
 public struct Access {
-    public typealias Completion = (_ granted: Bool) -> Void
+    public enum PhotoLibrary: MultiLevelAccessProvider {
+        public typealias AccessLevel = PHAccessLevel
+        public typealias AuthorizationStatus = PHAuthorizationStatus
 
-    public static let photoLibrary: AccessProvider.Type = PHPhotoLibrary.self
-
-#if !os(tvOS)
-    @available(tvOS, unavailable)
-    public static let video: AccessProvider.Type = Video.self
-    @available(tvOS, unavailable)
-    public static let audio: AccessProvider.Type = Audio.self
-
-    public static let speechRecognition: AccessProvider.Type = SFSpeechRecognizer.self
-
-    @available(tvOS, unavailable)
-    private struct Video: AccessProvider {
-        static func accessRequest(completion: @escaping Access.Completion) {
-            AVCaptureDevice.accessRequest(.video, completion: completion)
+        public static func requestAccess(level: AccessLevel) async -> AuthorizationStatus {
+            await PHPhotoLibrary.requestAuthorization(for: level)
         }
-    }
 
-    @available(tvOS, unavailable)
-    private struct Audio: AccessProvider {
-        static func accessRequest(completion: @escaping Access.Completion) {
-            AVCaptureDevice.accessRequest(.audio, completion: completion)
-        }
-    }
-#endif
-}
-
-#if !os(tvOS)
-
-import Speech
-
-@available(tvOS, unavailable)
-extension SFSpeechRecognizer: AccessProvider {
-    public static func accessRequest(completion: @escaping Access.Completion) {
-        if self.authorizationStatus() == .authorized {
-            completion(true)
-            return
-        }
-        self.requestAuthorization { status in
-            DispatchQueue.main.async {
-                let granted = status == .authorized
-                completion(granted)
-                if !granted {
+        public static func openSettings() {
+            Task { @MainActor in
 #if os(macOS)
-                    NSApplication.openSecurityPrivacySettings(.speechRecognition)
+                NSApplication.openSecurityPrivacySettings(.photos)
 #else
-                    UIApplication.openSettings()
+                UIApplication.openSettings()
 #endif
+            }
+        }
+    }
+
+    @available(tvOS, unavailable)
+    public enum Audio: AccessProvider {
+        public typealias AuthorizationStatus = Bool
+
+        public static func requestAccess() async -> AuthorizationStatus {
+            await AVCaptureDevice.requestAccess(for: .audio)
+        }
+
+        public static func openSettings() {
+            AVCaptureDevice.openSettings(for: .audio)
+        }
+    }
+
+    @available(tvOS, unavailable)
+    public enum Video: AccessProvider {
+        public typealias AuthorizationStatus = Bool
+
+        public static func requestAccess() async -> AuthorizationStatus {
+            await AVCaptureDevice.requestAccess(for: .video)
+        }
+
+        public static func openSettings() {
+            AVCaptureDevice.openSettings(for: .video)
+        }
+    }
+
+    @available(tvOS, unavailable)
+    enum SpeechRecognizer: AccessProvider {
+        public typealias AuthorizationStatus = SFSpeechRecognizerAuthorizationStatus
+
+        public static func requestAccess() async -> AuthorizationStatus {
+            let status = SFSpeechRecognizer.authorizationStatus()
+            if status != .notDetermined { return status }
+            return await withCheckedContinuation { continuation in
+                SFSpeechRecognizer.requestAuthorization { status in
+                    continuation.resume(returning: status)
                 }
+            }
+        }
+
+        public static func openSettings() {
+            Task { @MainActor in
+#if os(macOS)
+                NSApplication.openSecurityPrivacySettings(.speechRecognition)
+#else
+                UIApplication.openSettings()
+#endif
             }
         }
     }
 }
 
 @available(tvOS, unavailable)
-private extension AVCaptureDevice {
-    static func accessRequest(_ type: AVMediaType, completion: @escaping Access.Completion) {
-        if AVCaptureDevice.authorizationStatus(for: type) == .authorized {
-            completion(true)
-            return
-        }
-        AVCaptureDevice.requestAccess(for: type) { granted in
-            DispatchQueue.main.async {
-                completion(granted)
-                if !granted {
+public extension AVCaptureDevice {
+    static func openSettings(for mediaType: AVMediaType) {
+        Task { @MainActor in
 #if os(macOS)
-                    switch type {
-                    case .audio:
-                        NSApplication.openSecurityPrivacySettings(.microphone)
-                    case .video:
-                        NSApplication.openSecurityPrivacySettings(.camera)
-                    default:
-                        NSApplication.openSecurityPrivacySettings()
-                    }
-#else
-                    UIApplication.openSettings()
-#endif
-                }
-
+            switch type {
+            case .audio:
+                NSApplication.openSecurityPrivacySettings(.microphone)
+            case .video:
+                NSApplication.openSecurityPrivacySettings(.camera)
+            default:
+                NSApplication.openSecurityPrivacySettings()
             }
-        }
-    }
-}
-
-#endif
-
-extension PHPhotoLibrary: AccessProvider {
-    public static func accessRequest(completion: @escaping Access.Completion) {
-        if self.authorizationStatus() == .authorized {
-            completion(true)
-            return
-        }
-        self.requestAuthorization { status in
-            DispatchQueue.main.async {
-                let granted = status == .authorized
-                completion(granted)
-                if !granted {
-#if os(macOS)
-                    NSApplication.openSecurityPrivacySettings(.photos)
 #else
-                    UIApplication.openSettings()
+            UIApplication.openSettings()
 #endif
-                }
-            }
         }
     }
 }

@@ -4,7 +4,7 @@ import UIKit
 public extension ImagePicker {
     private typealias SourceType = UIImagePickerController.SourceType
 
-    struct SourceOptions: OptionSet {
+    struct SourceOptions: OptionSet, Sendable {
         public let rawValue: Int
         
         public init(rawValue: Int) {
@@ -23,6 +23,7 @@ public extension ImagePicker {
 //MARK: - Internal
 
 extension UIImagePickerController.SourceType {
+    @MainActor
     var isAvailable: Bool {
         UIImagePickerController.isSourceTypeAvailable(self)
     }
