@@ -1,10 +1,11 @@
 ![Logo](SwanLogo.png)
 
 [![SPM Compatible](https://shields.io)](https://swift.org)
-[![Version](https://shields.io)](http://cocoapods.org)
-[![Platform](https://shields.io)](http://cocoapods.org)
-[![Language](https://shields.io)](https://github.com)
-[![License](https://shields.io)](https://github.com)
+[![CocoaPods Version](https://shields.io)](http://cocoapods.org)
+[![CocoaPods Platforms](https://shields.io)](http://cocoapods.org)
+[![GitHub Top Language](https://shields.io)](https://github.com)
+[![CocoaPods License](https://shields.io)](http://cocoapods.org)
+
 
 Collection of tools and extensions.
 
