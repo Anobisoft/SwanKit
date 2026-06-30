@@ -2,26 +2,26 @@ name: SwanKit
 options:
   bundleIdPrefix: com.anobisoft
   deploymentTarget:
-    iOS: 15.6
-    tvOS: 15.6
-    macOS: 26.0.1
+    iOS: "16.0"
+    tvOS: "16.0"
+    macOS: "13.0"
   xcodeVersion: "15.0"
   generateEmptyDirectories: true
   
 fileGroups:
   - project.yml
   - SwanKit.podspec
-  - Podfile
+  - Package.swift
   - README.md
   - LICENSE
   - .gitignore
   
 targets:
-  # Фреймворки для каждой платформы
+  # Frameworks for each platform
   SwanKit_iOS:
     type: framework
     platform: iOS
-    deploymentTarget: "15.6"
+    deploymentTarget: "16.0"
     sources: 
       - path: SwanKit
     settings:
@@ -36,7 +36,7 @@ targets:
   SwanKit_tvOS:
     type: framework
     platform: tvOS
-    deploymentTarget: "15.6"
+    deploymentTarget: "16.0"
     sources: 
       - path: SwanKit
         excludes: 
@@ -54,7 +54,7 @@ targets:
   SwanKit_macOS:
     type: framework
     platform: macOS
-    deploymentTarget: "26.0.1"
+    deploymentTarget: "13.0"
     sources:
       - path: SwanKit
         excludes: 
@@ -70,11 +70,11 @@ targets:
       CODE_SIGNING_REQUIRED: NO
       CODE_SIGNING_ALLOWED: NO
 
-  # Тестовые таргеты
+  # Unit Test Targets
   SwanKit_iOSTests:
     type: bundle.unit-test
     platform: iOS
-    deploymentTarget: "15.6"
+    deploymentTarget: "16.0"
     sources: 
       - path: Tests
         excludes: 
@@ -88,7 +88,7 @@ targets:
   SwanKit_tvOSTests:
     type: bundle.unit-test
     platform: tvOS
-    deploymentTarget: "15.6"
+    deploymentTarget: "16.0"
     sources: 
       - path: Tests
         excludes: 
@@ -103,7 +103,7 @@ targets:
   SwanKit_macOSTests:
     type: bundle.unit-test
     platform: macOS
-    deploymentTarget: "10.15"
+    deploymentTarget: "13.0"
     sources: 
       - path: Tests
         excludes: 
@@ -113,11 +113,11 @@ targets:
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.anobisoft.swankit.tests.macos
 
-  # Демо приложения для каждой платформы
+  # Demo Applications
   SwanKitDemo_iOS:
     type: application
     platform: iOS
-    deploymentTarget: "15.6"
+    deploymentTarget: "16.0"
     sources: 
       - path: Demo/SwanKitDemo_iOS
     dependencies:
@@ -127,13 +127,13 @@ targets:
       PRODUCT_NAME: SwanKitDemo
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       CODE_SIGN_STYLE: Automatic
-      DEVELOPMENT_TEAM: "" # Добавьте ваш Team ID
-      TARGETED_DEVICE_FAMILY: "1,2" # iPhone & iPad
+      DEVELOPMENT_TEAM: ""
+      TARGETED_DEVICE_FAMILY: "1,2"
 
   SwanKitDemo_tvOS:
     type: application
     platform: tvOS
-    deploymentTarget: "15.6"
+    deploymentTarget: "16.0"
     sources: 
       - path: Demo/SwanKitDemo_tvOS
     dependencies:
@@ -143,13 +143,13 @@ targets:
       PRODUCT_NAME: SwanKitDemo
       ASSETCATALOG_COMPILER_APPICON_NAME: App Icon
       CODE_SIGN_STYLE: Automatic
-      DEVELOPMENT_TEAM: "" # Добавьте ваш Team ID
+      DEVELOPMENT_TEAM: ""
 
   SwanKitDemo_macOS:
     type: application
     platform: macOS
-    deploymentTarget: "26.0.1"
-    sources:
+    deploymentTarget: "13.0"
+    sources: 
       - path: Demo/SwanKitDemo_macOS
     dependencies:
       - target: SwanKit_macOS
@@ -158,10 +158,9 @@ targets:
       PRODUCT_NAME: SwanKitDemo
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       CODE_SIGN_STYLE: Automatic
-      DEVELOPMENT_TEAM: "" # Добавьте ваш Team ID
+      DEVELOPMENT_TEAM: ""
 
 schemes:
-  # Схемы для фреймворков
   SwanKit_iOS:
     build:
       targets:
@@ -186,7 +185,6 @@ schemes:
       targets:
         - SwanKit_macOSTests
 
-  # Схемы для демо приложений
   SwanKitDemo_iOS:
     build:
       targets:
@@ -235,4 +233,3 @@ settings:
       SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
     release:
       SWIFT_ACTIVE_COMPILATION_CONDITIONS: RELEASE
-
