@@ -1,4 +1,4 @@
-![Logo](SwanLogo.png)
+![Logo](SwanKitLogo.png)
 
 [![SPM Compatible](https://img.shields.io/badge/Swift_Package_Manager-compatible-4BC51D.svg)](https://swift.org/package-manager/)
 [![Version](https://img.shields.io/cocoapods/v/SwanKit.svg)](http://cocoapods.org/pods/SwanKit)
