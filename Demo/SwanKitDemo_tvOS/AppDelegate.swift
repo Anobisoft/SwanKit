@@ -1,0 +1,24 @@
+//
+//  AppDelegate.swift
+//  SwanKit
+//
+//  Created by Stanislav Pletnev on 2026-07-16.
+//  Copyright © 2026 Anobisoft. Licensed under the MIT License.
+//
+
+
+import UIKit
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let window = UIWindow()
+        let viewController = ViewController()
+        window.rootViewController = viewController
+        self.window = window
+        window.makeKeyAndVisible()
+        return true
+    }
+}
