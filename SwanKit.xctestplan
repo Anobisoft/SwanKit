@@ -1,0 +1,63 @@
+{
+  "configurations" : [
+    {
+      "id" : "80024E10-258F-4D8D-8301-42FC185F9A97",
+      "name" : "iOS Simulator Runtime",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:SwanKit.xcodeproj",
+          "identifier" : "D8B30B0CD1BC6D9378FA200A",
+          "name" : "SwanKitDemo_iOS"
+        }
+      }
+    },
+    {
+      "id" : "44C888A4-F068-4E17-9F4D-F2116FB97709",
+      "name" : "macOS Runtime",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:SwanKit.xcodeproj",
+          "identifier" : "E7BB222CB80A21D73E4CF389",
+          "name" : "SwanKitDemo_macOS"
+        }
+      }
+    },
+    {
+      "id" : "9F6BD0F0-1348-4D76-A9CD-F80758A2E670",
+      "name" : "tvOS Simulator Runtime",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:SwanKit.xcodeproj",
+          "identifier" : "9D4200F60AA8CD60B92D173B",
+          "name" : "SwanKitDemo_tvOS"
+        }
+      }
+    },
+    {
+      "id" : "49D79124-EF7D-4BB6-BB42-E1A303616F16",
+      "name" : "localization",
+      "options" : {
+        "language" : "en",
+        "locationScenario" : {
+          "identifier" : "Mumbai, India",
+          "referenceType" : "built-in"
+        },
+        "region" : "SO"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SwanKitFoundationTests",
+        "name" : "SwanKitFoundationTests"
+      }
+    }
+  ],
+  "version" : 1
+}
