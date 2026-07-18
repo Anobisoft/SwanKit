@@ -132,4 +132,4 @@ public final class ImagePicker {
 }
 
 // Retroactively inject strict compiler-level concurrency approval flags onto the legacy system result metadata class
-extension PHPickerResult: @unchecked Sendable {}
+extension PHPickerResult: @unchecked @retroactive Sendable {}

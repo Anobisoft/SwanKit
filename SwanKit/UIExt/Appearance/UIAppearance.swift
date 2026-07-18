@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIAppearance {
+public extension UIAppearance where Self: UIView {
 
     /// Provides a fluent, declarative DSL closure context to customize UI appearance proxies uniformly.
     ///

@@ -8,7 +8,6 @@
 
 import UIKit
 import SwanKitFoundation
-import SwanKitUIFoundation
 
 @MainActor
 public extension ImagePicker {
@@ -17,7 +16,7 @@ public extension ImagePicker {
     enum SourceType: Int, Sendable {
         case camera
         case photoLibrary
-
+        @MainActor
         var isAvailable: Bool {
             self == .photoLibrary || UIImagePickerController.isSourceTypeAvailable(.camera)
         }

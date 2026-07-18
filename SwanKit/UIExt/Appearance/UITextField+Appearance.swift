@@ -29,7 +29,7 @@ public extension UITextField {
     /// ### Example Usage:
     /// ```swift
     /// UITextField.appearance {
-    ///     \$0.set(edgeInsets: UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12))
+    ///     \$0.edgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
     /// }
     /// ```
     @objc dynamic var edgeInsets: UIEdgeInsets {
@@ -41,8 +41,8 @@ public extension UITextField {
 
     private static let appearanceExtensionInit: Void = {
         // Exchange native implementation pointers safely via runtime selectors
-        UITextField.swizzle(#selector(UITextField.textRect), #selector(UITextField.textRect_swizzled))
-        UITextField.swizzle(#selector(UITextField.editingRect), #selector(UITextField.editingRect_swizzled))
+        UITextField.swizzle(#selector(UITextField.textRect(forBounds:)), #selector(UITextField.textRect_swizzled(bounds:)))
+        UITextField.swizzle(#selector(UITextField.editingRect(forBounds:)), #selector(UITextField.editingRect_swizzled(bounds:)))
     }()
 
     @objc

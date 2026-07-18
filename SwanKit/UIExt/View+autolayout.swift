@@ -13,8 +13,8 @@ public extension UIView {
 
     /// Initializes and configures a new view instance with `translatesAutoresizingMaskIntoConstraints` set to `false`.
     ///
-    /// This factory method provides a clean, declarative shortcut when constructing programmatic layout hierarchies,
-    /// preventing common visual bugs caused by forgotten systemic auto-resizing mask conversions.
+    /// This static factory method provides a clean, declarative shortcut when constructing programmatic layout hierarchies
+    /// via standard default parameterless initializers.
     ///
     /// ### Example Usage:
     /// ```swift
@@ -27,6 +27,25 @@ public extension UIView {
         let view = Self()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }
+
+    /// Configures an existing pre-instantiated view instance for Auto Layout by turning off auto-resizing masks conversion.
+    ///
+    /// This instance modifier enables fluent cascading method chaining for components requiring specialized complex initializers
+    /// (e.g., custom frames, specific collection layout structures, or custom style configurations).
+    ///
+    /// ### Example Usage:
+    /// ```swift
+    /// let collection = UICollectionView(frame: .zero, collectionViewLayout: layout).autolayout()
+    ///     .backgroundColor(.clear)
+    ///     .clipsToBounds(true)
+    /// ```
+    ///
+    /// - Returns: The receiver instance self reference to support continuous declarative design chaining pipelines.
+    @discardableResult
+    func autolayout() -> Self {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        return self
     }
 }
 
