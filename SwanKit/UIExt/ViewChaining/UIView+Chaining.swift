@@ -95,4 +95,12 @@ public extension UIView {
         self.semanticContentAttribute = attribute
         return self
     }
+
+    /// Sets the dynamic content padding layout metrics for the view hierarchy boundaries and returns self.
+    @discardableResult
+    func contentInsets(_ insets: UIEdgeInsets) -> Self {
+        self.contentInsets = insets
+        return self
+    }
+
 }

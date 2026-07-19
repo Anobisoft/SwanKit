@@ -58,7 +58,7 @@ public final class AppearanceConfigurator {
         }
 
         // 3. Global Modern Button Styling (iOS 16+ Chaining Integration)
-        UIButton.appearance().configurationUpdateHandler = { button in
+        UIButton.appearance { button in
             var config = button.configuration ?? UIButton.Configuration.filled()
             config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                 var outgoing = incoming
@@ -92,5 +92,25 @@ public final class AppearanceConfigurator {
                 .color(.systemBlue)
                 .hidesWhenStopped(true)
         }
+
+        // 7. Global Progress Views Styling (Chaining DSL)
+        UIProgressView.appearance { proxy in
+            proxy
+                .progressTintColor(.systemBlue)
+                .trackTintColor(.systemGray5)
+        }
+
+        // 8. Global Dynamic Status Console Overlay Theme (Design System Stylesheet)
+        StatusConsoleLabel.appearance { proxy in
+            proxy
+                .numberOfLines(0)
+                .textColor(.label)
+                .font(.monospacedSystemFont(ofSize: 12, weight: .semibold))
+                .backgroundColor(.systemBackground.withAlphaComponent(0.85))
+                .cornerRadius(12)
+                .clipsToBounds(true)
+                .contentInsets(UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14))
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 //
-//  UIWindowScene+active.swift
+//  UIWindowSceneExt.swift
 //  SwanKit
 //
 //  Created by Stanislav Pletnev on 2026-07-17.

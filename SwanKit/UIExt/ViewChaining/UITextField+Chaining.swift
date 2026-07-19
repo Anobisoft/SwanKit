@@ -11,13 +11,6 @@ import UIKit
 @MainActor
 public extension UITextField {
 
-    /// Sets the dynamic text padding edge insets via SwanKit's swizzled framework and returns self to enable method chaining.
-    @discardableResult
-    func edgeInsets(_ insets: UIEdgeInsets) -> Self {
-        self.edgeInsets = insets
-        return self
-    }
-
     /// Sets the placeholder text configuration string and returns self to enable method chaining.
     @discardableResult
     func placeholder(_ text: String?) -> Self {
@@ -94,6 +87,13 @@ public extension UITextField {
     @discardableResult
     func returnKeyType(_ type: UIReturnKeyType) -> Self {
         self.returnKeyType = type
+        return self
+    }
+
+    /// Sets the dynamic text padding edge insets and returns self to enable method chaining.
+    @discardableResult
+    func textRectInsets(_ insets: UIEdgeInsets) -> Self {
+        self.textRectInsets = insets
         return self
     }
 }
