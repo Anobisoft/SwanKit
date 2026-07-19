@@ -8,25 +8,30 @@
 
 import UIKit
 
+public typealias TabBarDelegate = TabBarTransitionControllerDelegate
+
 /// A declarative registry containing pre-configured, MainActor-isolated `UITabBarControllerDelegate` presentation behaviors.
 @MainActor
-public struct TabBarDelegate {
+public extension TabBarDelegate {
 
     /// A slide transition where the outgoing view controller is removed smoothly to the margins, revealing the incoming view.
-    public static let removeSlideTransition: UITabBarControllerDelegate =
-    TabBarTransitionControllerDelegate(slide: .init(.removeToRight), .init(.removeToLeft))
+    static let removeSlideTransition = TabBarTransitionControllerDelegate(
+        slide: .init(.removeToRight), .init(.removeToLeft)
+    )
 
     /// A bidirectional cinematic slide transition where view controllers slide parallel to each other simulating page navigation.
-    public static let moveSlideTransition: UITabBarControllerDelegate =
-    TabBarTransitionControllerDelegate(slide: .init(.fromLeftToRight), .init(.fromRightToLeft))
+    static let moveSlideTransition = TabBarTransitionControllerDelegate(
+        slide: .init(.fromLeftToRight), .init(.fromRightToLeft)
+    )
 
     /// A stacking slide transition where the incoming view controller slides on top of the current layout boundary.
-    public static let coverSlideTransition: UITabBarControllerDelegate =
-    TabBarTransitionControllerDelegate(slide: .init(.coverFromLeft), .init(.coverFromRight))
+    static let coverSlideTransition = TabBarTransitionControllerDelegate(
+        slide: .init(.coverFromLeft), .init(.coverFromRight)
+    )
 }
 
 @MainActor
-public extension TabBarTransitionControllerDelegate {
+public extension TabBarDelegate {
 
     /// Convenience initializer to synthesize a tab bar animator using clean directional parameters.
     /// - Parameters:
@@ -44,6 +49,8 @@ public class TabBarTransitionControllerDelegate: NSObject {
     private let toNext: UIViewControllerAnimatedTransitioning
     private let toPrev: UIViewControllerAnimatedTransitioning
 
+    var interactionController: UIPercentDrivenInteractiveTransition?
+
     /// Initializes a tab bar animation coordinator context.
     /// - Parameters:
     ///   - toPrev: Animator bound to leftward backward strides.
@@ -56,7 +63,7 @@ public class TabBarTransitionControllerDelegate: NSObject {
 
 // MARK: - UITabBarControllerDelegate Conformance
 
-extension TabBarTransitionControllerDelegate: UITabBarControllerDelegate {
+extension TabBarDelegate: UITabBarControllerDelegate {
 
     public func tabBarController(
         _ tabBarController: UITabBarController,
@@ -71,6 +78,13 @@ extension TabBarTransitionControllerDelegate: UITabBarControllerDelegate {
         else { return nil }
 
         return toIndex > fromIndex ? toNext : toPrev
+    }
+
+    public func tabBarController(
+        _ tabBarController: UITabBarController,
+        interactionControllerFor animationController: UIViewControllerAnimatedTransitioning
+    ) -> UIViewControllerInteractiveTransitioning? {
+        return interactionController
     }
 }
 
@@ -163,9 +177,14 @@ extension TabBarSlideTransitioning: UIViewControllerAnimatedTransitioning {
             }
         }
 
-        UIView.animate(withDuration: duration, animations: animations) { success in
-            fromVC.view.removeFromSuperview()
-            transitionContext.completeTransition(success)
+        UIView.animate(withDuration: duration, animations: animations) { _ in
+            let didComplete = !transitionContext.transitionWasCancelled
+            if didComplete {
+                fromVC.view.removeFromSuperview()
+            } else {
+                toVC.view.removeFromSuperview()
+            }
+            transitionContext.completeTransition(didComplete)
         }
     }
 }

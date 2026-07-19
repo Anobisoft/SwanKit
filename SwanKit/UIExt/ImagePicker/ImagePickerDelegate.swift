@@ -64,7 +64,7 @@ extension ImagePicker.Delegate: PHPickerViewControllerDelegate {
         }
 
         if results.count == 1 {
-            deliver(result: .pickerSingle(results[1]))
+            deliver(result: .pickerSingle(results[0]))
         } else {
             deliver(result: .pickerMultiple(results))
         }

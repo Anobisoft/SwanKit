@@ -8,10 +8,13 @@
 
 import UIKit
 import PhotosUI
+import SwanKitFoundation
 
 /// A MainActor-isolated micro-framework manager orchestrating raw system media acquisition events.
 @MainActor
 public final class ImagePicker {
+    /// The unified completion block delivering the resulting transaction state payload.
+    public typealias Handler = @MainActor (PickerResult) -> Void
 
     // MARK: - Dedicated Configurations
 
@@ -52,8 +55,6 @@ public final class ImagePicker {
     // MARK: - Transaction State Result
 
     /// A strongly typed transactional state result representing explicitly how a media capture or library selection sequence was concluded.
-    ///
-    /// ИСПРАВЛЕНО: Переименовано в PickerResult во избежание конфликтов имен со стандартным типом Swift.Result.
     public enum PickerResult: Sendable {
         /// The transaction was explicitly aborted or canceled by the user layouts.
         case cancelled
@@ -68,9 +69,6 @@ public final class ImagePicker {
         case pickerMultiple([PHPickerResult])
     }
 
-    /// The unified completion block delivering the resulting transaction state payload.
-    public typealias Handler = @MainActor (PickerResult) -> Void
-
     public init() {}
 
     private var activeDelegate: Delegate?
@@ -83,12 +81,12 @@ public final class ImagePicker {
     ///   - viewController: The target view controller anchoring the presentation layer loop.
     ///   - config: The structured specifications mapping properties applied onto the camera device. Defaults to `.default`.
     ///   - handler: The delivery callback receiving the resulting structural ``PickerResult`` state.
-    public func presentCamera(
+    public func presentCameraCapture(
         on viewController: UIViewController,
         with config: CameraConfig = .default,
         completion handler: @escaping Handler
-    ) {
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+    ) async {
+        guard await checkCameraAccess(), UIImagePickerController.isSourceTypeAvailable(.camera) else {
             handler(.cancelled)
             return
         }
@@ -116,7 +114,12 @@ public final class ImagePicker {
         on viewController: UIViewController,
         with config: LibraryConfig = .default,
         completion handler: @escaping Handler
-    ) {
+    ) async {
+        guard await checkPhotoLibraryAccess() else {
+            handler(.cancelled)
+            return
+        }
+
         var phConfig = PHPickerConfiguration()
         phConfig.filter = .images
         phConfig.selectionLimit = config.selectionLimit
@@ -128,6 +131,30 @@ public final class ImagePicker {
         picker.delegate = delegate
 
         viewController.present(picker, animated: true)
+    }
+}
+
+// MARK: - Private
+
+private extension ImagePicker {
+    func checkCameraAccess() async -> Bool {
+        let granted = await Access.Capture.Video.requestAccess()
+        if !granted {
+            Access.Capture.Video.openSettings()
+        }
+        return granted
+    }
+
+    func checkPhotoLibraryAccess() async -> Bool {
+        let status = await Access.PhotoLibrary.requestAccess(level: .readWrite)
+
+        switch status {
+        case .authorized, .limited:
+            return true
+        default:
+            Access.PhotoLibrary.openSettings()
+            return false
+        }
     }
 }
 

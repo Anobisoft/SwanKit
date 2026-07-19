@@ -94,7 +94,7 @@ public enum Access {
 #endif
     }
 
-    enum Capture {
+    public enum Capture {
         // MARK: - Audio Microphone Subsystem
 
         /// An automated, atomic privacy manager mediating hardware access permissions for the device microphone.
