@@ -52,7 +52,7 @@ public extension UIColor {
     ///   - rgb: The single 24-bit hexadecimal integer value encoding RGB values sequentially.
     ///   - alpha: The opacity value of the color object, specified as a value from 0.0 to 1.0. Defaults to 1.0.
     convenience init(
-        rgb: Int,
+        rgb: UInt32,
         alpha: Float = 1
     ) {
         self.init(

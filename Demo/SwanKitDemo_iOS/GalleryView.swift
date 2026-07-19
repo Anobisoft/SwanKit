@@ -91,7 +91,6 @@ final class GalleryView: UIView {
 
     /// Computes the absolute pixel-perfect size for items based on the active view bounds width.
     func calculateAdaptiveItemSize() -> CGSize {
-        // FEATURE FIXED: We rely strictly on self.bounds to natively support iPad Split-View and orientation tracking.
         let availableWidth = bounds.width - (sidePadding * 2)
 
         let targetColumns: CGFloat = 3
@@ -100,14 +99,5 @@ final class GalleryView: UIView {
 
         let cellWidth = floor(netContentWidth / targetColumns)
         return CGSize(width: cellWidth, height: cellWidth)
-    }
-
-    func applyShadowConfiguration() {
-        statusLabel.shadow(
-            radius: 8,
-            color: { $0.userInterfaceStyle == .dark ? .label : .black },
-            opacity: 0.15,
-            offset: CGSize(width: 0, height: 4)
-        )
     }
 }

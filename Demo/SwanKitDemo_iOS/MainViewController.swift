@@ -39,15 +39,9 @@ final class MainViewController: TabBarController {
         )
 
         // Tab 2: Placeholder shell for future subsystems visualization
-        let placeholderVC2 = UIViewController()
-        placeholderVC2.view.backgroundColor = .systemGroupedBackground
-        let nav2 = UINavigationController(rootViewController: placeholderVC2)
-        placeholderVC2.title = "Analytics Subsystem"
-        nav2.tabBarItem = UITabBarItem(
-            title: "Metrics",
-            image: UIImage(systemName: "chart.bar.xaxis"),
-            tag: 1
-        )
+        let metricsVC = MetricsViewController()
+        let nav2 = UINavigationController(rootViewController: metricsVC)
+        nav2.tabBarItem = UITabBarItem(title: "Metrics", image: UIImage(systemName: "chart.bar.xaxis"), tag: 1)
 
         // Tab 3: Placeholder shell for future subsystems visualization
         let placeholderVC3 = UIViewController()

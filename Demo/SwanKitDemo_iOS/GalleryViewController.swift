@@ -22,9 +22,6 @@ final class GalleryViewController: UIViewController {
     // Feature Used: ImagePicker hardware layer abstraction bridging AVFoundation and PhotoKit seamlessly
     private let imagePicker = ImagePicker()
 
-    // Feature Used: Cache<Key, Value> thread-safe memory retention subsystem mapped tightly to systemic asset IDs
-    private let internalCache = Cache<String, UIImage>()
-
     /// A structured ledger tracking the sequential array order of original picker results elements.
     private var pickerResults: [PHPickerResult] = []
 
@@ -45,7 +42,6 @@ final class GalleryViewController: UIViewController {
         setupNavigation()
         setupCollectionView()
         setupControlActions()
-        mainView.applyShadowConfiguration()
     }
 
     // MARK: - Architectural Configurations
@@ -95,7 +91,6 @@ final class GalleryViewController: UIViewController {
                     // Сохраняем в локальные массивы и кэш SwanKit
                     self.previewIDs.append(uniqueCameraID)
                     self.previews[uniqueCameraID] = capturedImage
-                    self.internalCache[uniqueCameraID] = capturedImage
 
                     self.mainView.collectionView.reloadData()
                     self.mainView.statusLabel.text("Camera Session: Success! Added frame token directly to workspace.")
@@ -178,7 +173,6 @@ final class GalleryViewController: UIViewController {
         }
 
         self.previews[assetID] = image
-        self.internalCache[assetID] = image
 
         self.mainView.collectionView.reloadData()
         self.mainView.statusLabel.text("Library Streams: Successfully rendered thumbnail via \(source) pipeline.")

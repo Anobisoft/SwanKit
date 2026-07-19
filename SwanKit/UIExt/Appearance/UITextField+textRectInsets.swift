@@ -8,10 +8,6 @@
 
 import UIKit
 
-private enum AssociatedKeys {
-    static let insetsKey = "SwanKit.UITextField.textRectInsets.key"
-}
-
 /// A MainActor-isolated extension adding dynamic padding layout customizability to text fields via runtime method swizzling.
 ///
 /// `UITextField+Appearance` intercepts and modifies the internal padding spaces applied uniformly around the active text
@@ -23,6 +19,10 @@ private enum AssociatedKeys {
 /// - **Design System Support:** Exposes dynamic Objective-C attributes to leverage native `UIAppearance` central themes styling.
 @MainActor
 public extension UITextField {
+
+    private enum AssociatedKeys {
+        nonisolated(unsafe) static let textRectInsets = malloc(1)!
+    }
 
     // MARK: - Core Design System Token Property
 
@@ -39,24 +39,28 @@ public extension UITextField {
     /// ```
     @objc dynamic var textRectInsets: UIEdgeInsets {
         get {
-            let value = objc_getAssociatedObject(self, AssociatedKeys.insetsKey) as? NSValue
+            let value = objc_getAssociatedObject(self, AssociatedKeys.textRectInsets) as? NSValue
             return value?.uiEdgeInsetsValue ?? .zero
         }
         set {
-            Self.extensionInit
-            objc_setAssociatedObject(self, AssociatedKeys.insetsKey, NSValue(uiEdgeInsets: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            Self.textRect_swizzling
+            Self.editingRect_swizzling
+
+            objc_setAssociatedObject(self, AssociatedKeys.textRectInsets, NSValue(uiEdgeInsets: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             setNeedsLayout()
         }
     }
+}
 
-    // MARK: - Runtime Swizzling Core Orchestration
-
-    /// A thread-safe, static token executing runtime method pointer exchanges exactly once upon property assignment.
-    private static let extensionInit: Void = {
+private extension UITextField {
+    static let textRect_swizzling: Void = {
         UITextField.swizzle(
             #selector(UITextField.textRect),
             #selector(UITextField.textRect_swizzled)
         )
+    }()
+
+    static let editingRect_swizzling: Void = {
         UITextField.swizzle(
             #selector(UITextField.editingRect),
             #selector(UITextField.editingRect_swizzled)
@@ -64,15 +68,13 @@ public extension UITextField {
     }()
 
     /// Intercepted layout signature mutating text bounds properties dynamically based on active insets.
-    @objc
-    private func textRect_swizzled(bounds: CGRect) -> CGRect {
+    @objc private func textRect_swizzled(bounds: CGRect) -> CGRect {
         let rect = textRect_swizzled(bounds: bounds)
         return rect.inset(by: textRectInsets)
     }
 
     /// Intercepted layout signature mutating active typing session bounds dynamically based on active insets.
-    @objc
-    private func editingRect_swizzled(bounds: CGRect) -> CGRect {
+    @objc private func editingRect_swizzled(bounds: CGRect) -> CGRect {
         let rect = editingRect_swizzled(bounds: bounds)
         return rect.inset(by: textRectInsets)
     }

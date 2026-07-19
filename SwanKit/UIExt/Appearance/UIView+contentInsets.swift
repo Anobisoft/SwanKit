@@ -8,10 +8,6 @@
 
 import UIKit
 
-private enum AssociatedKeys {
-    static let insetsKey = "SwanKit.UIView.contentInsets.key"
-}
-
 /// A MainActor-isolated extension injecting dynamic layout content padding customizability globally into the base `UIView` layer.
 ///
 /// `UIView+contentInsets` introduces an enterprise-grade layout abstraction that seamlessly embeds custom `UIEdgeInsets`
@@ -24,6 +20,10 @@ private enum AssociatedKeys {
 /// - **Just-In-Time Swizzling:** Lazily hooks systemic frame-binding properties exactly once upon the initial property allocation sequence.
 /// - **Central Styling Control:** Fully supports native `UIAppearance` proxy workflows for global, declarative interface theme orchestration.
 public extension UIView {
+
+    private struct AssociatedKeys {
+        nonisolated(unsafe) static let contentInsetsKey = malloc(1)! // выделяет 1 байт с уникальным адресом
+    }
 
     // MARK: - Core Design System Token Property
 
@@ -42,48 +42,31 @@ public extension UIView {
     /// ```
     @objc dynamic var contentInsets: UIEdgeInsets {
         get {
-            let value = objc_getAssociatedObject(self, AssociatedKeys.insetsKey) as? NSValue
+            let value = objc_getAssociatedObject(self, AssociatedKeys.contentInsetsKey) as? NSValue
             return value?.uiEdgeInsetsValue ?? .zero
         }
         set {
-            Self.extensionInit
+            UIView.intrinsicContentSize_swizzling
+            UILabel.drawText_swizzling
+            UILabel.textRect_swizzling
 
-            objc_setAssociatedObject(self, AssociatedKeys.insetsKey, NSValue(uiEdgeInsets: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, AssociatedKeys.contentInsetsKey, NSValue(uiEdgeInsets: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             setNeedsLayout()
             invalidateIntrinsicContentSize()
         }
     }
+}
 
-    // MARK: - Lazy Private Swizzling Trigger Anchor
-
-    /// A thread-safe, lazily evaluated static token executing the Objective-C runtime method pointer exchanges exactly once upon assignment.
-    private static let extensionInit: Void = {
-        UIView.swizzle(
-            #selector(getter: alignmentRectInsets),
-            #selector(swan_alignmentRectInsets)
-        )
+private extension UIView {
+    static let intrinsicContentSize_swizzling: Void = {
         UIView.swizzle(
             #selector(getter: intrinsicContentSize),
-            #selector(swan_intrinsicContentSize)
+            #selector(getter: intrinsicContentSize_swizzled)
         )
     }()
 
-    // MARK: - Swizzled Implementations
-
-    /// Intercepted layout bounds signature accumulating design token insets into native alignment frame margins.
-    @objc func swan_alignmentRectInsets() -> UIEdgeInsets {
-        let originalInsets = self.swan_alignmentRectInsets()
-        return UIEdgeInsets(
-            top: originalInsets.top + contentInsets.top,
-            left: originalInsets.left + contentInsets.left,
-            bottom: originalInsets.bottom + contentInsets.bottom,
-            right: originalInsets.right + contentInsets.right
-        )
-    }
-
-    /// Intercepted geometry signature inflating intrinsic bounds dimensions to dynamically accommodate stylesheet padding allocations.
-    @objc func swan_intrinsicContentSize() -> CGSize {
-        let size = self.swan_intrinsicContentSize()
+    @objc private var intrinsicContentSize_swizzled: CGSize {
+        let size = self.intrinsicContentSize_swizzled
         let contentInsets = contentInsets
 
         // Safeguard layout pipelines from inflating system constants tracking unmeasurable or absent intrinsic boundaries
@@ -92,6 +75,38 @@ public extension UIView {
         return CGSize(
             width: size.width + contentInsets.left + contentInsets.right,
             height: size.height + contentInsets.top + contentInsets.bottom
+        )
+    }
+}
+
+private extension UILabel {
+    static let drawText_swizzling: Void = {
+        UILabel.swizzle(
+            #selector(drawText(in:)),
+            #selector(drawText_swizzled(in:))
+        )
+    }()
+
+    static let textRect_swizzling: Void = {
+        UILabel.swizzle(
+            #selector(textRect(forBounds:limitedToNumberOfLines:)),
+            #selector(textRect_swizzled(forBounds:limitedToNumberOfLines:))
+        )
+    }()
+
+    @objc private func drawText_swizzled(in rect: CGRect) {
+        let insetRect = rect.inset(by: contentInsets)
+        self.drawText_swizzled(in: insetRect)
+    }
+
+    @objc private func textRect_swizzled(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+        let insetBounds = bounds.inset(by: contentInsets)
+        let rect = self.textRect_swizzled(forBounds: insetBounds, limitedToNumberOfLines: numberOfLines)
+        return CGRect(
+            x: rect.origin.x - contentInsets.left,
+            y: rect.origin.y - contentInsets.top,
+            width: rect.width + contentInsets.left + contentInsets.right,
+            height: rect.height + contentInsets.top + contentInsets.bottom
         )
     }
 }

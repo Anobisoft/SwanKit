@@ -72,7 +72,7 @@ public final class AppearanceConfigurator {
         // Полный каскад отступов (свизлинг) и параметров границ (UIView+Layer)
         UITextField.appearance { proxy in
             proxy
-                .edgeInsets(UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16))
+                .textRectInsets(.init(top: 12, left: 16, bottom: 12, right: 16))
                 .backgroundColor(.systemBackground)
                 .cornerRadius(8)
                 .borderWidth(1)
@@ -107,10 +107,9 @@ public final class AppearanceConfigurator {
                 .textColor(.label)
                 .font(.monospacedSystemFont(ofSize: 12, weight: .semibold))
                 .backgroundColor(.systemBackground.withAlphaComponent(0.85))
-                .cornerRadius(12)
-                .clipsToBounds(true)
                 .contentInsets(UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14))
+                .cornerRadius(16)
+                .clipsToBounds(true)
         }
-
     }
 }

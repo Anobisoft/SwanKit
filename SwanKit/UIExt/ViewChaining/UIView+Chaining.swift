@@ -16,21 +16,21 @@ public extension UIView {
     /// Sets the corner radius for the view's underlying layer background and returns self to enable method chaining.
     @discardableResult
     func cornerRadius(_ radius: CGFloat) -> Self {
-        self.layer.cornerRadius = radius
+        self.cornerRadius = radius
         return self
     }
 
     /// Sets the border width for the view's underlying layer and returns self to enable method chaining.
     @discardableResult
     func borderWidth(_ width: CGFloat) -> Self {
-        self.layer.borderWidth = width
+        self.borderWidth = width
         return self
     }
 
     /// Sets the border color for the view's underlying layer and returns self to enable method chaining.
     @discardableResult
     func borderColor(_ color: UIColor?) -> Self {
-        self.layer.borderColor = color?.cgColor
+        self.borderColor = color
         return self
     }
 
@@ -70,6 +70,7 @@ public extension UIView {
     @discardableResult
     func clipsToBounds(_ clips: Bool) -> Self {
         self.clipsToBounds = clips
+        self._clipsToBounds = clips
         return self
     }
 
