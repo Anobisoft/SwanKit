@@ -1,5 +1,7 @@
 ![Logo](SwanKitLogo.png)
 
+<p />
+
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Anobisoft/SwanKit?style=flat-square&color=blue)
 ![Platforms](https://img.shields.io/badge/platforms-iOS_%7C_macOS_%7C_tvOS_%7C_watchOS-lightgrey.svg)
 ![Swift 6 Concurrency](https://img.shields.io/badge/Swift_6-Concurrency_Ready-f05138.svg)
